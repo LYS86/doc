@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-bb6009aa","path":"/modules.html","title":"module (模块)","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1678435542000,"contributors":[{"name":"LYS","email":"106499400+LYS86@users.noreply.github.com","commits":1}]},"filePathRelative":"modules.md"}');export{e as data};
