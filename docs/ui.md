@@ -32,7 +32,7 @@ ui.layout(
 
 代码的第 5 行和第 4 行一样，也是一个按钮控件，只不过他的文本内容为"第二个按钮"。这两个控件在垂直布局中，因此会纵向排列，效果如图：
 
-![ex1](images/ex1.png)
+![ex1](./images/ex1.png)
 
 如果我们把这个例子的垂直布局(vertical)改成水平布局(horizontal)，也即：
 
@@ -48,7 +48,7 @@ ui.layout(
 
 则这两个按钮会横向排列，效果如图：
 
-![ex1-horizontal](images/ex1-horizontal.png)
+![ex1-horizontal](./images/ex1-horizontal.png)
 
 一个控件可以指定多个属性(甚至可以不指定任何属性)，用空格隔开即可；布局同样也可以指定属性，例如:
 
@@ -64,7 +64,7 @@ ui.layout(
 
 第三行`bg="#ff0000"`指定了垂直布局的背景色(bg)为"#ff0000"，这是一个 RGB 颜色，表示红色(有关 RGB 的相关知识参见[RGB 颜色对照表](http://tool.oschina.net/commons?type=3))。第四行的`textSize="20sp"`则指定了按钮控件的字体大小(textSize)为"20sp"，sp 是一个字体单位，暂时不用深入理会。上述代码的效果如图：
 
-![ex-properties](images/ex-properties.png)
+![ex-properties](./images/ex-properties.png)
 
 一个界面便由一些布局和控件组成。为了便于文档阅读，我们再说明一下以下术语：
 
@@ -91,7 +91,7 @@ ui.layout(
 
 在这个例子中，第一个按钮为自适应宽度，第二个按钮为填满父布局，显示效果为：
 
-![ex-w](images/ex-w.png)
+![ex-w](./images/ex-w.png)
 
 如果不设置该属性，则不同的控件和布局有不同的默认宽度，大多数为`auto`。
 
@@ -158,7 +158,7 @@ ui.layout(
 
 显示效果为:
 
-![ex-gravity](images/ex-gravity.png)
+![ex-gravity](./images/ex-gravity.png)
 
 这些属性是可以组合的，例如`gravity="right|bottom"`的 View 他的内容会在右下角。
 
@@ -183,7 +183,7 @@ ui.layout(
 
 在这个例子中，我们让帧布局(frame)的大小占满整个屏幕，通过给第一个按钮设置属性`layout_gravity="center"`来使得按钮在帧布局中居中，通过给第二个按钮设置属性`layout_gravity="right|bottom"`使得他在帧布局中位于右下角。效果如图：
 
-![ex-layout-gravity](images/ex-layout-gravity.png)
+![ex-layout-gravity](./images/ex-layout-gravity.png)
 
 要注意的是，layout_gravity 的属性不一定总是生效的，具体取决于布局的类别。例如不能让水平布局中的第一个子控件靠底部显示(否则和水平布局本身相违背)。
 
@@ -216,11 +216,11 @@ ui.layout(
 
 第一个按钮的 margin 属性指定了他的边距为 30dp, 也就是他与水平布局以及第二个按钮的间距都是 30dp, 其显示效果如图:
 
-![ex1-margin](images/ex1-margin.png)
+![ex1-margin](./images/ex1-margin.png)
 
 如果把`margin="30"`改成`margin="10 40"`那么第一个按钮的左右间距为 10dp, 上下间距为 40dp, 效果如图:
 
-![ex2-margin](images/ex2-margin.png)
+![ex2-margin](./images/ex2-margin.png)
 
 有关 margin 属性的单位，参见[尺寸的单位: Dimension](#尺寸的单位-dimension)。
 
@@ -240,7 +240,7 @@ ui.layout(
 
 第一个按钮指定了左外边距为 50dp，则他和他的父布局水平布局(horizontal)的左边的间距为 50dp, 效果如图：
 
-![ex-marginLeft](images/ex-marginLeft.png)
+![ex-marginLeft](./images/ex-marginLeft.png)
 
 ## marginRight
 
@@ -283,7 +283,7 @@ ui.layout(
 
 这个例子是一个居中的按钮(通过父布局的`gravity="center"`属性设置)，背景色为红色(`bg="#ff0000"`)，文本内容为"HelloWorld"，左边距为 10dp，上边距为 20dp，下边距为 30dp，右边距为 40dp，其显示效果如图：
 
-![ex-padding](images/ex-padding.png)
+![ex-padding](./images/ex-padding.png)
 
 ## paddingLeft
 
@@ -508,7 +508,7 @@ ui.ok.click(function () {
 
 效果如图：
 
-![ex-input](images/ex-input.png)
+![ex-input](./images/ex-input.png)
 
 除此之外，输入框控件有另外一些主要属性(虽然这些属性对于文本控件也是可用的但一般只用于输入框控件)：
 
@@ -516,7 +516,7 @@ ui.ok.click(function () {
 
 输入提示。这个提示会在输入框为空的时候显示出来。如图所示:
 
-![ex-hint](images/ex-hint.png)
+![ex-hint](./images/ex-hint.png)
 
 上面图片效果的代码为：
 
