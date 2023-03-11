@@ -1,4 +1,4 @@
-# Floaty
+# Floaty <Badge type="tip" text="稳定" vertical="middle" />
 
 floaty 模块提供了悬浮窗的相关函数，可以在屏幕上显示自定义悬浮窗，控制悬浮窗大小、位置等。
 
