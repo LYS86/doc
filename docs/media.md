@@ -1,6 +1,4 @@
-# Media
-
-> 稳定性: 稳定
+# Media <Badge type="tip" text="稳定" vertical="middle" />
 
 media 模块提供多媒体编程的支持。目前仅支持音乐播放和媒体文件扫描。后续会结合 UI 加入视频播放等功能。
 
