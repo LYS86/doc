@@ -4,20 +4,25 @@ import { searchPlugin } from "@vuepress/plugin-search";
 
 export default defineUserConfig({
   lang: "zh-CN",
+  //标题
   title: "AutoX.js",
+  //描述
   description: "AutoX.js 文档",
+  //log
   head: [["link", { rel: "icon", href: "./images/logo.png" }]],
+  //基础路径
+  base:'/doc/',
   //主题配置
   theme: defaultTheme({
     //导航栏
     navbar: [
       {
         text: "文档",
-        link: "documentation.md",
+        link: "/documentation.md",
       },
       {
         text: "简介",
-        link: "overview.md",
+        link: "/overview.md",
       },
     ],
     //logo
