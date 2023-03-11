@@ -1,6 +1,4 @@
-# Threads
-
-> 稳定性: 实验
+# Threads <Badge type="tip" text="实验" vertical="middle" />
 
 Threads 模块提供了多线程支持，可以启动新线程来运行脚本。
 
