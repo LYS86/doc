@@ -1,4 +1,4 @@
-# 用户界面: UI
+# 用户界面: UI <Badge type="tip" text="稳定" vertical="middle" />
 
 ui 模块提供了编写用户界面的支持。
 
