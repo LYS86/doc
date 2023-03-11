@@ -1,4 +1,4 @@
-# Util
+# Util <Badge type="tip" text="稳定" vertical="middle" />
 
 > 稳定性: 稳定
 
