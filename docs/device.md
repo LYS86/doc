@@ -1,6 +1,4 @@
-# Device
-
-> 稳定性: 稳定
+# Device <Badge type="tip" text="稳定" vertical="middle" />
 
 device 模块提供了与设备有关的信息与操作，例如获取设备宽高，内存使用率，IMEI，调整设备亮度、音量等。
 
