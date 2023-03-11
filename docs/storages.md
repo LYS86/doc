@@ -1,6 +1,4 @@
-# Storages
-
-> 稳定性: 稳定
+# Storages <Badge type="tip" text="稳定" vertical="middle" />
 
 storages 模块提供了保存简单数据、用户配置等的支持。保存的数据除非应用被卸载或者被主动删除，否则会一直保留。
 
