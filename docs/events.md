@@ -1,6 +1,4 @@
-# Events
-
-> 稳定性: 稳定
+# Events <Badge type="tip" text="稳定" vertical="middle" />
 
 events 模块提供了监听手机通知、按键、触摸的接口。您可以用他配合自动操作函数完成自动化工作。
 
