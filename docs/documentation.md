@@ -1,6 +1,4 @@
-# 关于本文档 <!-- {docsify-ignore-all} -->
-
-<!-- type=misc -->
+# 关于本文档 
 
 文档使用 Markdown 编写，使用 [Docsify](https://github.com/docsifyjs/docsify/) 解析为网页，[源码](https://github.com/hyb1996/AutoJs-Docs) 在 github 上开源，目前由开发者维护。
 
