@@ -1,6 +1,4 @@
-# module (模块)
-
-> 稳定性: 稳定
+# module (模块) <Badge type="tip" text="稳定" vertical="middle" />
 
 Auto.js 有一个简单的模块加载系统。 在 Auto.js 中，文件和模块是一一对应的（每个文件被视为一个独立的模块）。
 
