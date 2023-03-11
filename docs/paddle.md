@@ -1,6 +1,4 @@
-# paddle
-
-> Paddle OCR 在 5.6.1 版本加入
+# paddle <Badge type="tip" text="5.6.1" vertical="middle" /> <Badge type="warning" text="实验" vertical="middle" />
 
 ## paddle.ocr(image,useSlim)
 
