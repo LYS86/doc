@@ -1,4 +1,4 @@
-# $crypto
+# $crypto <Badge type="tip" text="稳定" vertical="middle" />
 
 \$crypto 模块提供了对称加密（例如 AES）、非对称加密（例如 RSA）、消息摘要（例如 MD5, SHA）等支持。
 
