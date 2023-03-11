@@ -1,3 +1,5 @@
+# shell 函数 <Badge type="tip" text="稳定" vertical="middle" />
+
 shell 即 Unix Shell，在类 Unix 系统提供与操作系统交互的一系列命令。
 
 很多程序可以用来执行 shell 命令，例如终端模拟器。
@@ -8,10 +10,6 @@ shell 即 Unix Shell，在类 Unix 系统提供与操作系统交互的一系列
 
 - 通过`java.lang.Runtime.exec`执行(shell, Tap, Home 等函数)
 - 通过内嵌终端模拟器执行(RootAutomator, Shell 等对象)
-
-# shell 函数
-
-> 稳定性: 稳定
 
 ## shell(cmd[, root])
 
