@@ -63,7 +63,10 @@ export default defineUserConfig({
         collapsible: true,
         children: ["paddle.md", "gmlkit.md"],
       },
-      // "AI.md",
+      {
+        text: "颜色-colors",
+        link: 'colors',
+      },
       "images.md",
       "events.md",
       "base64.md",
