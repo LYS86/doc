@@ -1,6 +1,7 @@
 import { defineUserConfig } from "vuepress";
 import { defaultTheme } from "@vuepress/theme-default";
 import { searchPlugin } from "@vuepress/plugin-search";
+import { backToTopPlugin } from "@vuepress/plugin-back-to-top";
 
 export default defineUserConfig({
   lang: "zh-CN",
@@ -11,7 +12,10 @@ export default defineUserConfig({
   //log
   head: [["link", { rel: "icon", href: "./images/logo.png" }]],
   //基础路径
-  base:'/doc/',
+  base: "/doc/",
+
+  editLink: false,
+
   //主题配置
   theme: defaultTheme({
     //导航栏
@@ -76,6 +80,7 @@ export default defineUserConfig({
 
     sidebarDepth: 6,
     //搜索插件
-    plugins: [searchPlugin()],
   }),
+
+  plugins: [searchPlugin(), backToTopPlugin()],
 });
