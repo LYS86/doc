@@ -1,6 +1,4 @@
-# Console
-
-> 稳定性: 稳定
+# Console <Badge type="tip" text="稳定" vertical="middle" />
 
 控制台模块提供了一个和 Web 浏览器中相似的用于调试的控制台。用于输出一些调试信息、中间结果等。
 console 模块中的一些函数也可以直接作为全局函数使用，例如 log, print 等。
