@@ -1,8 +1,8 @@
-# Base64 编码
+# Base64 编码 <Badge type="tip" text="稳定" vertical="middle" />
 
 提供基本的 Base64 转换函数。
 
-## $base64.encode(str[, encoding = 'utf-8')
+## $base64.encode(str[, encoding = 'utf-8'])
 
 - `str` {string} 要编码的字符串
 - `encoding` {string} 可选，字符编码
