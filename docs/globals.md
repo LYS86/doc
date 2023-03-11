@@ -1,4 +1,4 @@
-# 全局变量与函数
+# 全局变量与函数 <Badge type="tip" text="稳定" vertical="middle" />
 
 全局变量和函数在所有模块中均可使用。 但以下变量的作用域只在模块内，详见 [module](modules.md)：
 
