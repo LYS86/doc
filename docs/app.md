@@ -1,5 +1,5 @@
 
-# APP
+# APP <Badge type="tip" text="稳定" vertical="middle" />
 
 该模块提供一系列函数，用于使用其他应用、与其他应用交互。例如发送意图、打开文件、发送邮件等。  
 同时提供了方便的进阶函数 `startActivity` 和 `sendBroadcast` ，用他们可完成 app 模块没有内置的和其他应用的交互。
