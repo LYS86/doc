@@ -1,8 +1,4 @@
-# websocket
-
-`4.2.8 新增`
-
-> 稳定性: 稳定
+# websocket <Badge type="tip" text="4.2.8" vertical="middle"/> <Badge type="tip" text="实验" vertical="middle" />
 
 websocket 模块，采用 okhttp3 实现，本模块中包含了 okhttp3 核心所有的类，下面讲解其基本的使用方法，更多的使用规则,可参考：[okhttp](https://square.github.io/okhttp/)，这里涉及一些线程安全问题，请学习多线程，生命周期等内容。
 
