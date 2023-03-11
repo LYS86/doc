@@ -1,7 +1,4 @@
-# ML kit OCR
-
-> Google ML Kit OCR 在 6.3.4 版本加入
-
+# ML kit OCR <Badge type="tip" text="6.3.4" vertical="middle" /> <Badge type="warning" text="实验" vertical="middle" />
 ## gmlkit.ocr(img, language)
 
 对给定的图像进行文字识别。
