@@ -1,6 +1,4 @@
-# Files
-
-> 稳定性: 稳定
+# Files <Badge type="tip" text="稳定" vertical="middle" />
 
 files 模块提供了一些常见的文件处理，包括文件读写、移动、复制、删掉等。
 
