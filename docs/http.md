@@ -1,6 +1,4 @@
-# HTTP
-
-> 稳定性: 稳定
+# HTTP <Badge type="tip" text="稳定" vertical="middle" />
 
 http 模块提供一些进行 http 请求的函数。
 
