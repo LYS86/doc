@@ -1,6 +1,4 @@
-# Dialogs
-
-> 稳定性: 稳定
+# Dialogs <Badge type="tip" text="稳定" vertical="middle" />
 
 dialogs 模块提供了简单的对话框支持，可以通过对话框和用户进行交互。最简单的例子如下：
 
