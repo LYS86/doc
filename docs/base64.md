@@ -1,4 +1,6 @@
-# Base64 编码 <Badge type="tip" text="稳定" vertical="middle" />
+# Base64 编码
+
+<Badge type="tip" text="稳定" vertical="middle" />
 
 提供基本的 Base64 转换函数。
 

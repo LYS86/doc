@@ -1,4 +1,6 @@
-# colors  <Badge type="tip" text="稳定" vertical="middle" />
+# 颜色-colors
+
+<Badge type="tip" text="稳定" vertical="middle" />
 
 在 Auto.js 有两种方式表示一个颜色。
 一种是使用一个字符串"#AARRGGBB"或"#RRGGBB"，其中 AA 是 Alpha 通道(透明度)的值，RR 是 R 通道(红色)的值，GG 是 G 通道(绿色)的值，BB 是 B 通道(蓝色)的值。例如"#ffffff"表示白色, "#7F000000"表示半透明的黑色。

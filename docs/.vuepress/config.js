@@ -1,7 +1,6 @@
 import { defineUserConfig } from "vuepress";
 import { defaultTheme } from "@vuepress/theme-default";
 import { searchPlugin } from "@vuepress/plugin-search";
-import { backToTopPlugin } from "@vuepress/plugin-back-to-top";
 
 export default defineUserConfig({
   lang: "zh-CN",
@@ -18,6 +17,14 @@ export default defineUserConfig({
 
   //主题配置
   theme: defaultTheme({
+    //禁用编辑此页
+    editLink: false,
+
+    //禁用更新时间
+    lastUpdated:false,
+
+    //禁用贡献者
+    contributors: false,
     //导航栏
     navbar: [
       {
@@ -65,7 +72,7 @@ export default defineUserConfig({
       },
       {
         text: "颜色-colors",
-        link: 'colors',
+        link: "colors",
       },
       "images.md",
       "events.md",
@@ -85,5 +92,5 @@ export default defineUserConfig({
     //搜索插件
   }),
 
-  plugins: [searchPlugin(), backToTopPlugin()],
+  plugins: [searchPlugin()],
 });

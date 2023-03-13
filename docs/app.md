@@ -1,8 +1,8 @@
+# 应用交互-app
 
-# APP <Badge type="tip" text="稳定" vertical="middle" />
+<Badge type="tip" text="稳定" vertical="middle" />
 
-该模块提供一系列函数，用于使用其他应用、与其他应用交互。例如发送意图、打开文件、发送邮件等。  
-同时提供了方便的进阶函数 `startActivity` 和 `sendBroadcast` ，用他们可完成 app 模块没有内置的和其他应用的交互。
+app 模块允许你与其他应用程序进行交互。使用该模块，你可以启动其他应用程序，发送 Intent 意图，打开文件，发送电子邮件等。
 
 ## app.versionCode
 
@@ -147,7 +147,7 @@ app.uninstall("com.tencent.mobileqq");
 
 ## app.openUrl(url)
 
-- `url` {string} 网站的 Url，如果不以"http://"或"https://"开头则默认是"http://"。
+- `url` {string} 网站的 URL，如果不以 "http://" 或 "https://" 开头则默认是 "http://"。
 
 用浏览器打开网站 url。
 
@@ -216,18 +216,18 @@ app.startActivity({
 
 ### app.intent(options)
 
-**[v4.1.0 新增]**
+<Badge type="tip" text="v4.1.0+" vertical="middle" />
 
 - `options` {Object} 选项，包括：
-  - `action` {string} 意图的 Action，指意图要完成的动作，是一个字符串常量，比如"android.intent.action.SEND"。当 action 以"android.intent.action"开头时，可以省略前缀，直接用"SEND"代替。参见[Actions](https://developer.android.com/reference/android/content/Intent.html#standard-activity-actions)。
+  - `action` {string} 意图的 Action，指意图要完成的动作，是一个字符串常量，比如"android.intent.action.SEND"。当 action 以"android.intent.action"开头时，可以省略前缀，直接用"SEND"代替。参见[Actions][actions]。
   - `type` {string} 意图的 MimeType，表示和该意图直接相关的数据的类型，表示比如"text/plain"为纯文本类型。
   - `data` {string} 意图的 Data，表示和该意图直接相关的数据，是一个 Uri, 可以是文件路径或者 Url 等。例如要打开一个文件, action 为"android.intent.action.VIEW", data 为"file:///sdcard/1.txt"。
-  - `category` {Array} 意图的类别。比较少用。参见[Categories](https://developer.android.com/reference/android/content/Intent.html#standard-categories)。
+  - `category` {Array} 意图的类别。比较少用。参见[Categories][categories]。
   - `packageName` {string} 目标包名
   - `className` {string} 目标 Activity 或 Service 等组件的名称
-  - `extras` {Object} 以键值对构成的这个 Intent 的 Extras(额外信息)。提供该意图的其他信息，例如发送邮件时的邮件标题、邮件正文。参见[Extras](https://developer.android.com/reference/android/content/Intent.html#standard-extra-data)。
-  - `flags` {Array} intent 的标识，字符串数组，例如`["activity_new_task", "grant_read_uri_permission"]`。参见[Flags](https://developer.android.com/reference/android/content/Intent.html#setFlags%28int%29)。
-  - `root` {Boolea} 是否以 root 权限启动、发送该 intent。使用该参数后，不能使用`context.
+  - `extras` {Object} 以键值对构成的这个 Intent 的 Extras(额外信息)。提供该意图的其他信息，例如发送邮件时的邮件标题、邮件正文。参见[Extras][extras]。
+  - `flags` {Array} intent 的标识，字符串数组，例如`["activity_new_task", "grant_read_uri_permission"]`。参见[Flags][flags]。
+  - `root` {Boolean} 是否以 root 权限启动、发送该 intent。使用该参数后，不能使用`context.
 
 根据选项，构造一个意图 Intent 对象。
 
@@ -249,7 +249,7 @@ context.startActivity(i);
 
 ```js
 app.startActivity({
-  packageName: "org.autojs.autojs",
+  packageName: "org.autojs.autoxjs.v6",
   className: "org.autojs.autojs.ui.settings.SettingsActivity_",
   root: true,
 });
@@ -257,7 +257,7 @@ app.startActivity({
 
 另外，关于 intent 的参数如何获取的问题，一些 intent 是意外发现并且在网络中传播的（例如跳转 QQ 聊天窗口是因为 QQ 给网页提供了跳转到客服 QQ 的方法），如果要自己获取活动的 intent 的参数，可以通过例如"intent 记录"，"隐式启动"等应用拦截内部 intent 或者查询暴露的 intent。其中拦截内部 intent 需要 XPosed 框架，或者可以通过反编译等手段获取参数。总之，没有简单直接的方法。
 
-更多信息，请百度[安卓 Intent](https://www.baidu.com/s?wd=android%20Intent)或参考[Android 指南: Intent](https://developer.android.com/guide/components/intents-filters.html#Types)。
+更多信息，请百度安卓 Intent 或参考[Android 指南: Intent][android 指南: intent]。
 
 ### app.startActivity(options)
 
@@ -287,8 +287,7 @@ app.startActivity({
 
 ### app.sendBroadcast(name)
 
-**[v4.1.0 新增]**
-
+<Badge type="tip" text="v4.1.0+" vertical="middle" />
 - `name` {string} 特定的广播名称，包括：
   - `inspect_layout_hierarchy` 布局层次分析
   - `inspect_layout_bounds` 布局范围
@@ -301,7 +300,7 @@ app.sendBroadcast("inspect_layout_bounds");
 
 ### app.intentToShell(options)
 
-**[v4.1.0 新增]**
+<Badge type="tip" text="v4.1.0+" vertical="middle" />
 
 - `options` {Object} 选项
 
@@ -320,14 +319,14 @@ shell(
 );
 ```
 
-参见[intent 参数的规范](https://developer.android.com/studio/command-line/adb#IntentSpec)。
+参见[intent 参数的规范][intent 参数的规范]。
 
 ### app.parseUri(uri)
 
-**[v4.1.0 新增]**
+<Badge type="tip" text="v4.1.0+" vertical="middle" />
 
 - `uri` {string} 一个代表 Uri 的字符串，例如"file:///sdcard/1.txt", "https://www.autojs.org"
-- `return` {Uri} 一个代表 Uri 的对象，参见[android.net.Uri](https://developer.android.com/reference/android/net/Uri)。
+- `return` {Uri} 一个代表 Uri 的对象，参见[android.net.Uri][android.net.uri]。
 
 解析 uri 字符串并返回相应的 Uri 对象。即使 Uri 格式错误，该函数也会返回一个 Uri 对象，但之后如果访问该对象的 scheme, path 等值可能因解析失败而返回`null`。
 
@@ -335,9 +334,17 @@ shell(
 
 ### app.getUriForFile(path)
 
-**[v4.1.0 新增]**
+<Badge type="tip" text="v4.1.0+" vertical="middle" />
 
 - `path` {string} 文件路径，例如"/sdcard/1.txt"
-- `return` {Uri} 一个指向该文件的 Uri 的对象，参见[android.net.Uri](https://developer.android.com/reference/android/net/Uri)。
+- `return` {Uri} 一个指向该文件的 Uri 的对象，参见[android.net.Uri][android.net.uri]。
 
 从一个文件路径创建一个 uri 对象。需要注意的是，在高版本 Android 上，由于系统限制直接在 Uri 暴露文件的绝对路径，因此返回的 Uri 会是诸如`content://...`的形式。
+
+[actions]: https://developer.android.com/reference/android/content/Intent.html#standard-activity-actions
+[categories]: https://developer.android.com/reference/android/content/Intent.html#standard-categories
+[extras]: https://developer.android.com/reference/android/content/Intent.html#standard-extra-data
+[flags]: https://developer.android.com/reference/android/content/Intent.html#setFlags%28int%29
+[android 指南: intent]: https://developer.android.com/guide/components/intents-filters.html#Types
+[intent 参数的规范]: https://developer.android.com/studio/command-line/adb#IntentSpec
+[android.net.uri]: https://developer.android.com/reference/android/net/Uri

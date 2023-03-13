@@ -1,4 +1,6 @@
-# Dialogs <Badge type="tip" text="稳定" vertical="middle" />
+# 对话框-dialogs
+
+<Badge type="tip" text="稳定" vertical="middle" />
 
 dialogs 模块提供了简单的对话框支持，可以通过对话框和用户进行交互。最简单的例子如下：
 
@@ -17,12 +19,13 @@ if (clear) {
 
 `confirm()`会弹出一个对话框并让用户选择"是"或"否"，如果选择"是"则返回 true。
 
-需要特别注意的是，对话框在 ui 模式下不能像通常那样使用，应该使用回调函数或者[Promise](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise)的形式。理解这一点可能稍有困难。举个例子:
+需要特别注意的是，对话框在 ui 模式下不能像通常那样使用，应该使用回调函数或者[Promise][promise]的形式。理解这一点可能稍有困难。举个例子:
 
 ```js
 "ui";
 //回调形式
-confirm("要清除所有缓存吗?", function (clear) {
+
+confirm("要清除所有缓存吗?", null, function (clear) {
   if (clear) {
     alert("清除成功!");
   }
@@ -46,7 +49,7 @@ confirm("要清除所有缓存吗?").then((clear) => {
 该函数也可以作为全局函数使用。
 
 ```js
-alert("出现错误~", "出现未知错误，请联系脚本作者”);
+alert("出现错误~", "出现未知错误，请联系脚本作者");
 ```
 
 在 ui 模式下该函数返回一个`Promise`。例如:
@@ -632,3 +635,5 @@ dialogs
   - `positive`
   - `negative`
   - `neutral`
+
+[promise]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise

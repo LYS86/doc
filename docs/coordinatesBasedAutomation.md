@@ -1,4 +1,6 @@
-# 基于坐标的触摸模拟 <Badge type="tip" text="稳定" vertical="middle" />
+# 基于坐标的触摸模拟
+
+<Badge type="tip" text="稳定" vertical="middle" />
 
 本章节介绍了一些使用坐标进行点击、滑动的函数。这些函数有的需要安卓 7.0 以上，有的需要 root 权限。  
 要获取要点击的位置的坐标，可以在开发者选项中开启"指针位置"。  
@@ -32,11 +34,11 @@ longClick(300, 500);
 
 那么在其他设备上 AutoJs 会自动放缩坐标以便脚本仍然有效。例如在 540 \* 960 的屏幕中`click(800, 200)`实际上会点击位置(400, 100)。
 
-# 安卓 7.0 以上的触摸和手势模拟
+# Automator
 
-> 稳定性: 稳定
+<Badge type="tip" text="稳定" vertical="middle" />
 
-**注意以下命令只有 Android7.0 及以上才有效**
+**注意以下命令基于无障碍，只有 Android7.0 及以上才有效**
 
 ## click(x, y)
 
@@ -92,16 +94,30 @@ for (var i = 0; i < 100; i++) {
 
 一般而言，只有滑动过程中被其他事件中断才会滑动失败。
 
-## gesture(duration, [x1, y1], [x2, y2], ...)
+## gesture(duration, [x1, y1], ...[x2, y2])
 
 - `duration` {number} 手势的时长
-- [x, y] ... 手势滑动路径的一系列坐标
+- ...[x, y] 手势滑动路径的一系列坐标
 
-模拟手势操作。例如`gesture(1000, [0, 0], [500, 500], [500, 1000])`为模拟一个从(0, 0)到(500, 500)到(500, 100)的手势操作，时长为 2 秒。
+模拟手势操作。
 
-## gestures([delay1, duration1, [x1, y1], [x2, y2], ...], [delay2, duration2, [x3, y3], [x4, y4], ...], ...)
+示例：模拟一个从(0, 0)到(500, 500)到(500, 100)的手势操作，时长为 2 秒。
 
-同时模拟多个手势。每个手势的参数为\[delay, duration, 坐标\], delay 为延迟多久(毫秒)才执行该手势；duration 为手势执行时长；坐标为手势经过的点的坐标。其中 delay 参数可以省略，默认为 0。
+```js
+gesture(1000, [0, 0], [500, 500], [500, 1000]);
+```
+
+<!-- ## gestures([delay1, duration1, [x1, y1], [x2, y2], ...], [delay2, duration2, [x3, y3], [x4, y4], ...], ...) -->
+
+## gestures(...arr)
+
+- `arr` {Array} 手势，参数有 ：[delay, duration, point1, ...point2 ]
+  - `delay`{number} 延迟,默认 0
+  - `duration`{number} 滑动时长
+  - `point1` {Array} 起点坐标 [x,y]
+  - `point2` {Array} 终点坐标
+
+同时模拟多个手势。
 
 例如手指捏合：
 
@@ -111,7 +127,7 @@ gestures([0, 500, [800, 300], [500, 1000]], [0, 500, [300, 1500], [500, 1000]]);
 
 # RootAutomator
 
-> 稳定性: 稳定
+<Badge type="tip" text="稳定" vertical="middle" />
 
 RootAutomator 是一个使用 root 权限来模拟触摸的对象，用它可以完成触摸与多点触摸，并且这些动作的执行没有延迟。
 
@@ -170,7 +186,7 @@ ra.exit();
 
 模拟按下位置(x, y)，时长为 duration 毫秒。
 
-## RootAutomator.longPress(x, y[\, id\])
+## RootAutomator.longPress(x, y[, id])
 
 - `x` {number} 横坐标
 - `y` {number} 纵坐标
@@ -205,7 +221,7 @@ ra.exit();
 
 # 使用 root 权限点击和滑动的简单命令
 
-> 稳定性: 实验
+<Badge type="warning" text="实验" vertical="middle" />
 
 注意：本章节的函数在后续版本很可能有改动！请勿过分依赖本章节函数的副作用。推荐使用`RootAutomator`代替本章节的触摸函数。
 

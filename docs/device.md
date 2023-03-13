@@ -1,4 +1,6 @@
-# Device <Badge type="tip" text="稳定" vertical="middle" />
+# 设备信息-device
+
+<Badge type="tip" text="稳定" vertical="middle" />
 
 device 模块提供了与设备有关的信息与操作，例如获取设备宽高，内存使用率，IMEI，调整设备亮度、音量等。
 
@@ -6,27 +8,25 @@ device 模块提供了与设备有关的信息与操作，例如获取设备宽�
 
 ## device.width
 
-- {number}
+- `return` {number}
 
 设备屏幕分辨率宽度。例如 1080。
 
 ## device.height
 
-- {number}
+- `return` {number}
 
 设备屏幕分辨率高度。例如 1920。
 
 ## device.buildId
 
-- {string}
-
-Either a changelist number, or a label like "M4-rc20".
+- `return` {string}
 
 修订版本号，或者诸如"M4-rc20"的标识。
 
 ## device.broad
 
-- {string}
+- `return` {string}
 
 The name of the underlying board, like "goldfish".
 
@@ -34,7 +34,7 @@ The name of the underlying board, like "goldfish".
 
 ## device.brand
 
-- {string}
+- `return` {string}
 
 The consumer-visible brand with which the product/hardware will be associated, if any.
 
@@ -42,7 +42,7 @@ The consumer-visible brand with which the product/hardware will be associated, i
 
 ## device.device
 
-- {string}
+- `return` {string}
 
 The name of the industrial design.
 
@@ -50,7 +50,7 @@ The name of the industrial design.
 
 ## device.model
 
-- {string}
+- `return` {string}
 
 The end-user-visible name for the end product.
 
@@ -58,7 +58,7 @@ The end-user-visible name for the end product.
 
 ## device.product
 
-- {string}
+- `return` {string}
 
 The name of the overall product.
 
@@ -66,7 +66,7 @@ The name of the overall product.
 
 ## device.bootloader
 
-- {string}
+- `return` {string}
 
 The system bootloader version number.
 
@@ -74,7 +74,7 @@ The system bootloader version number.
 
 ## device.hardware
 
-- {string}
+- `return` {string}
 
 The name of the hardware (from the kernel command line or /proc).
 
@@ -82,7 +82,7 @@ The name of the hardware (from the kernel command line or /proc).
 
 ## device.fingerprint
 
-- {string}
+- `return` {string}
 
 A string that uniquely identifies this build. Do not attempt to parse this value.
 
@@ -90,7 +90,7 @@ A string that uniquely identifies this build. Do not attempt to parse this value
 
 ## device.serial
 
-- {string}
+- `return` {string}
 
 A hardware serial number, if available. Alphanumeric only, case-insensitive.
 
@@ -98,7 +98,7 @@ A hardware serial number, if available. Alphanumeric only, case-insensitive.
 
 ## device.sdkInt
 
-- {number}
+- `return` {number}
 
 The user-visible SDK version of the framework; its possible values are defined in Build.VERSION_CODES.
 
@@ -106,13 +106,13 @@ The user-visible SDK version of the framework; its possible values are defined i
 
 ## device.incremental
 
-- {string}
+- `return` {string}
 
 The internal value used by the underlying source control to represent this build. E.g., a perforce changelist number or a git hash.
 
 ## device.release
 
-- {string}
+- `return` {string}
 
 The user-visible version string. E.g., "1.0" or "3.4b5".
 
@@ -120,13 +120,13 @@ Android 系统版本号。例如"5.0", "7.1.1"。
 
 ## device.baseOS
 
-- {string}
+- `return` {string}
 
 The base OS build the product is based on.
 
 ## device.securityPatch
 
-- {string}
+- `return` {string}
 
 The user-visible security patch level.
 
@@ -134,7 +134,7 @@ The user-visible security patch level.
 
 ## device.codename
 
-- {string}
+- `return` {string}
 
 The current development codename, or the string "REL" if this is a release build.
 
@@ -142,13 +142,13 @@ The current development codename, or the string "REL" if this is a release build
 
 ## device.getIMEI()
 
-- {string}
+- `return` {string}
 
 返回设备的 IMEI.
 
 ## device.getAndroidId()
 
-- {string}
+- `return` {string}
 
 返回设备的 Android ID。
 
@@ -156,7 +156,9 @@ Android ID 为一个用 16 进制字符串表示的 64 位整数，在设备第�
 
 ## device.getMacAddress()
 
-- {string}
+<Badge type="warning" text="实验" vertical="middle" />
+
+- `return` {string}
 
 返回设备的 Mac 地址。该函数需要在有 WLAN 连接的情况下才能获取，否则会返回 null。
 
@@ -164,13 +166,13 @@ Android ID 为一个用 16 进制字符串表示的 64 位整数，在设备第�
 
 ## device.getBrightness()
 
-- {number}
+- `return` {number}
 
 返回当前的(手动)亮度。范围为 0~255。
 
 ## device.getBrightnessMode()
 
-- {number}
+- `return` {number}
 
 返回当前亮度模式，0 为手动亮度，1 为自动亮度。
 
@@ -192,37 +194,37 @@ Android ID 为一个用 16 进制字符串表示的 64 位整数，在设备第�
 
 ## device.getMusicVolume()
 
-- {number} 整数值
+- `return` {number} 整数值
 
 返回当前媒体音量。
 
 ## device.getNotificationVolume()
 
-- {number} 整数值
+- `return` {number} 整数值
 
 返回当前通知音量。
 
 ## device.getAlarmVolume()
 
-- {number} 整数值
+- `return` {number} 整数值
 
 返回当前闹钟音量。
 
 ## device.getMusicMaxVolume()
 
-- {number} 整数值
+- `return` {number} 整数值
 
 返回媒体音量的最大值。
 
 ## device.getNotificationMaxVolume()
 
-- {number} 整数值
+- `return` {number} 整数值
 
 返回通知音量的最大值。
 
 ## device.getAlarmMaxVolume()
 
-- {number} 整数值
+- `return` {number} 整数值
 
 返回闹钟音量的最大值。
 
@@ -252,31 +254,31 @@ Android ID 为一个用 16 进制字符串表示的 64 位整数，在设备第�
 
 ## device.getBattery()
 
-- {number} 0.0~100.0 的浮点数
+- `return` {number} 0.0~100.0 的浮点数
 
 返回当前电量百分比。
 
 ## device.isCharging()
 
-- {boolean}
+- `return` {boolean}
 
 返回设备是否正在充电。
 
 ## device.getTotalMem()
 
-- {number}
+- `return` {number}
 
 返回设备内存总量，单位字节(B)。1MB = 1024 \* 1024B。
 
 ## device.getAvailMem()
 
-- {number}
+- `return` {number}
 
 返回设备当前可用的内存，单位字节(B)。
 
 ## device.isScreenOn()
 
-- {boolean}
+- `return` {boolean}
 
 返回设备屏幕是否是亮着的。如果屏幕亮着，返回`true`; 否则返回`false`。
 
@@ -334,22 +336,22 @@ device.vibrate(2000);
 
 ## device.cancelVibration()
 
-**[v4.2.7 新增]**
+<Badge type="tip" text="v4.2.7+" vertical="middle" />
 如果设备处于震动状态，则取消震动。
 
 ## device.checkDeviceHasNavigationBar()
 
-**[v4.2.7 新增]**
+<Badge type="tip" text="v4.2.7+" vertical="middle" />
 
-- {boolean}
+- `return` {boolean}
 
 设备是否存储虚拟导航栏
 
 ## device.getVirtualBarHeigh()
 
-**[v4.2.7 新增]**
+<Badge type="tip" text="v4.2.7+" vertical="middle" />
 
-- {number}
+- `return` {number}
 
 返回导航栏的高度
 设备虚拟导航栏的高度,可以用设备高度 减去 这个高度，再按一定比例 点击底部附件的坐标

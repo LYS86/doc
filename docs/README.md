@@ -12,8 +12,3 @@ actions:
     type: secondary
 
 ---
-
-npm run docs:dev
-
-
-
