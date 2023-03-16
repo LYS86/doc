@@ -2,7 +2,8 @@
   "devDependencies": {
     "@vuepress/bundler-vite": "^2.0.0-beta.61",
     "@vuepress/plugin-search": "^2.0.0-beta.61",
-    "vuepress": "^2.0.0-beta.61"
+    "vuepress": "^2.0.0-beta.61",
+    "vuepress-plugin-copy-code2": "^2.0.0-beta.193"
   },
   "scripts": {
     "docs:dev": "vuepress dev docs",

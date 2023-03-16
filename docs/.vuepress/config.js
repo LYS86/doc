@@ -1,7 +1,7 @@
 import { defineUserConfig } from "vuepress";
 import { defaultTheme } from "@vuepress/theme-default";
 import { searchPlugin } from "@vuepress/plugin-search";
-
+import { copyCodePlugin } from "vuepress-plugin-copy-code2";
 export default defineUserConfig({
   lang: "zh-CN",
   //标题
@@ -21,7 +21,7 @@ export default defineUserConfig({
     editLink: false,
 
     //禁用更新时间
-    lastUpdated:false,
+    lastUpdated: false,
 
     //禁用贡献者
     contributors: false,
@@ -92,5 +92,14 @@ export default defineUserConfig({
     //搜索插件
   }),
 
-  plugins: [searchPlugin()],
+  plugins: [
+    searchPlugin(),
+    copyCodePlugin({
+      //移动端是否显示
+      showInMobile: true,
+      //纯净模式
+      pure: true,
+      // 插件选项
+    }),
+  ],
 });
