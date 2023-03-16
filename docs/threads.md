@@ -1,4 +1,6 @@
-# Threads <Badge type="tip" text="实验" vertical="middle" />
+# 线程-threads
+
+<Badge type="tip" text="实验" vertical="middle" />
 
 Threads 模块提供了多线程支持，可以启动新线程来运行脚本。
 
@@ -8,12 +10,10 @@ Threads 模块提供了多线程支持，可以启动新线程来运行脚本。
 
 由于 JavaScript 自身没有多线程的支持，因此您可能会遇到意料之外的问题。
 
-# threads
-
 ## threads.start(action)
 
 - `action` {Function} 要在新线程执行的函数
-- 返回 [Thread](#thread)
+- `retrun` [Thread](#thread)
 
 启动一个新线程并执行 action。
 
@@ -51,26 +51,26 @@ thread.interrupt();
 
 ## threads.currentThread()
 
-- 返回 [Thread](#thread)
+- `retrun` [Thread](#thread)
 
 返回当前线程。
 
 ## threads.disposable()
 
-- 返回 [Disposable](#disposable)
+- `retrun` [Disposable](#disposable)
 
 新建一个 Disposable 对象，用于等待另一个线程的某个一次性结果。更多信息参见[线程通信](#线程通信)以及[Disposable](#disposable)。
 
 ## threads.atomic([initialValue])
 
 - `initialValue` {number} 初始整数值，默认为 0
-- 返回[AtomicLong](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/atomic/AtomicLong.html)
+- `retrun`[AtomicLong](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/atomic/AtomicLong.html)
 
 新建一个整数原子变量。更多信息参见[线程安全](#线程安全)以及[AtomicLong](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/atomic/AtomicLong.html)。
 
 ## threads.lock()
 
-- 返回[ReentrantLock](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/locks/ReentrantLock.html)
+- `retrun`[ReentrantLock](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/locks/ReentrantLock.html)
 
 新建一个可重入锁。更多信息参见[线程安全](#线程安全)以及[ReentrantLock](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/locks/ReentrantLock.html)。
 
@@ -129,7 +129,7 @@ toast("sum = " + sum);
 
 ## Thread.isAlive()
 
-- 返回 {boolean}
+- `retrun` {boolean}
 
 返回线程是否存活。如果线程仍未开始或已经结束，返回`false`; 如果线程已经开始或者正在运行中，返回`true`。
 
@@ -322,7 +322,7 @@ numsLock.unlock();
 ## sync(func)
 
 - `func` {Function} 函数
-- 返回 {Function}
+- `retrun` {Function}
 
 给函数 func 加上同步锁并作为一个新函数返回。
 

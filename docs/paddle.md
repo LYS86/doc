@@ -1,4 +1,6 @@
-# paddle <Badge type="tip" text="5.6.1" vertical="middle" /> <Badge type="warning" text="实验" vertical="middle" />
+# paddle
+
+<Badge type="tip" text="5.6.1" vertical="middle" /> <Badge type="warning" text="实验" vertical="middle" />
 
 ## paddle.ocr(image,useSlim)
 

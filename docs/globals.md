@@ -1,11 +1,14 @@
-# 全局变量与函数 <Badge type="tip" text="稳定" vertical="middle" />
+# 全局变量与函数
+
+<Badge type="tip" text="稳定" vertical="middle" />
 
 全局变量和函数在所有模块中均可使用。 但以下变量的作用域只在模块内，详见 [module](modules.md)：
 
 - exports
 - module
 - require()
-  以下的对象是特定于 Auto.js 的。 有些内置对象是 JavaScript 语言本身的一部分，它们也是全局的。
+
+以下的对象是特定于 Auto.js 的。 有些内置对象是 JavaScript 语言本身的一部分，它们也是全局的。
 
 一些模块中的函数为了使用方便也可以直接全局使用，这些函数在此不再赘述。例如 timers 模块的 setInterval, setTimeout 等函数。
 
@@ -22,7 +25,7 @@ sleep(5000);
 
 ## currentPackage()
 
-- 返回 {string}
+- `return` {string}
 
 返回最近一次监测到的正在运行的应用的包名，一般可以认为就是当前正在运行的应用的包名。
 
@@ -30,7 +33,7 @@ sleep(5000);
 
 ## currentActivity()
 
-- 返回 {string}
+- `return` {string}
 
 返回最近一次监测到的正在运行的 Activity 的名称，一般可以认为就是当前正在运行的 Activity 的名称。
 
@@ -48,7 +51,7 @@ setClip("剪贴板文本");
 
 ## getClip()
 
-- 返回 {string}
+- `return` {string}
 
 返回系统剪贴板的内容。
 
@@ -62,11 +65,10 @@ toast("剪贴板内容为:" + getClip());
 
 以气泡显示信息 message 几秒。(具体时间取决于安卓系统，一般都是 2 秒)
 
-注意，信息的显示是"异步"执行的，并且，不会等待信息消失程序才继续执行。如果在循环中执行该命令，可能出现脚本停止运行后仍然有不断的气泡信息出现的情况。
-例如:
+注意，连续显示多个 toast 时，会排队显示，即使脚本已经结束，toast 可能仍然会显示。例如:
 
 ```js
-for (var i = 0; i < 100; i++) {
+for (var i = 0; i < 20; i++) {
   toast(i);
 }
 ```
@@ -143,15 +145,15 @@ module.exports = toast;
 
 - `min` {number} 随机数产生的区间下界
 - `max` {number} 随机数产生的区间上界
-- 返回 {number}
+- `return` {number}
 
 返回一个在[min...max]之间的随机数。例如 random(0, 2)可能产生 0, 1, 2。
 
 ## random()
 
-- 返回 {number}
+- `return` {number}
 
-返回在[0, 1)的随机浮点数。
+返回在(0-1)的随机浮点数。
 
 ## requiresApi(api)
 
@@ -163,21 +165,26 @@ module.exports = toast;
 
 可以参考以下 Android API 和版本的对照表:
 
-平台版本： API 级别
+| API Level | SDK 版本 | 发布日期      |
+| --------- | -------- | ------------- |
+| 15        | 4.0.3    | 2011 年 12 月 |
+| 16        | 4.1      | 2012 年 7 月  |
+| 17        | 4.2      | 2012 年 11 月 |
+| 18        | 4.3      | 2013 年 7 月  |
+| 19        | 4.4      | 2013 年 10 月 |
+| 21        | 5.0      | 2014 年 11 月 |
+| 22        | 5.1      | 2015 年 3 月  |
+| 23        | 6.0      | 2015 年 10 月 |
+| 24        | 7.0      | 2016 年 8 月  |
+| 25        | 7.1      | 2016 年 12 月 |
+| 26        | 8.0      | 2017 年 8 月  |
+| 27        | 8.1      | 2017 年 12 月 |
+| 28        | 9.0      | 2018 年 8 月  |
+| 29        | 10.0     | 2019 年 9 月  |
+| 30        | 11.0     | 2020 年 9 月  |
+| 31        | 12.0     | 2021 年 8 月  |
 
-Android 7.0： 24
-
-Android 6.0： 23
-
-Android 5.1： 22
-
-Android 5.0： 21
-
-Android 4.4W： 20
-
-Android 4.4： 19
-
-Android 4.3： 18
+[Android API 版本](https://source.android.com/docs/setup/about/build-numbers?hl=zh-cn)
 
 ## requiresAutojsVersion(version)
 

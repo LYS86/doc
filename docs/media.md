@@ -1,4 +1,5 @@
-# Media <Badge type="tip" text="稳定" vertical="middle" />
+# 多媒体-media 
+<Badge type="tip" text="稳定" vertical="middle" />
 
 media 模块提供多媒体编程的支持。目前仅支持音乐播放和媒体文件扫描。后续会结合 UI 加入视频播放等功能。
 
@@ -88,18 +89,18 @@ sleep(media.getMusicDuration() - 30 * 1000);
 
 ## media.isMusicPlaying()
 
-- 返回 {boolean}
+- `return` {boolean}
 
 返回当前是否正在播放音乐。
 
 ## media.getMusicDuration()
 
-- 返回 {number}
+- `return` {number}
 
 返回当前音乐的时长。单位毫秒。
 
 ## media.getMusicCurrentPosition()
 
-- 返回 {number}
+- `return` {number}
 
 返回当前音乐的播放进度(已经播放的时间)，单位毫秒。

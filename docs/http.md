@@ -1,14 +1,16 @@
-# HTTP <Badge type="tip" text="稳定" vertical="middle" />
+# 网络请求-http
+
+<Badge type="tip" text="稳定" vertical="middle" />
 
 http 模块提供一些进行 http 请求的函数。
 
 ## http.get(url[, options, callback])
 
 - `url` {string} 请求的 URL 地址，需要以"http://"或"https://"开头。如果 url 没有以"http://"开头，则默认为"http://"。
-- `options` {Object} 请求选项。参见[http.request()](#httprequesturl-options-callback)。
-- `callback` {Function} 回调函数，可选，其参数是一个[Response](#response)对象。如果不加回调函数，则该请求将阻塞、同步地执行。
+- `options` {Object} 请求选项。参见[http.request()][http.request()]。
+- `callback` {Function} 回调函数，可选，其参数是一个[Response][response]对象。如果不加回调函数，则该请求将阻塞、同步地执行。
 
-对地址 url 进行一次 HTTP GET 请求。如果没有回调函数，则在请求完成或失败时返回此次请求的响应,(参见[Response](#response))。
+对地址 url 进行一次 HTTP GET 请求。如果没有回调函数，则在请求完成或失败时返回此次请求的响应,(参见[Response][response])。
 
 最简单 GET 请求如下:
 
@@ -76,9 +78,9 @@ if (res.statusCode != 200) {
 - `url` {string} 请求的 URL 地址，需要以"http://"或"https://"开头。如果 url 没有以"http://"开头，则默认为"http://"。
 - `data` {string} | {Object} POST 数据。
 - `options` {Object} 请求选项。
-- `callback` {Function} 回调，其参数是一个[Response](#response)对象。如果不加回调参数，则该请求将阻塞、同步地执行。
+- `callback` {Function} 回调，其参数是一个[Response][response]对象。如果不加回调参数，则该请求将阻塞、同步地执行。
 
-对地址 url 进行一次 HTTP POST 请求。如果没有回调函数，则在请求完成或失败时返回此次请求的响应(参见[Response](#response))。
+对地址 url 进行一次 HTTP POST 请求。如果没有回调函数，则在请求完成或失败时返回此次请求的响应(参见[Response][response])。
 
 其中 POST 数据可以是字符串或键值对。具体含义取决于 options.contentType 的值。默认为"application/x-www-form-urlencoded"(表单提交), 这种方式是 JQuery 的 ajax 函数的默认方式。
 
@@ -105,9 +107,9 @@ if (html.contains("页面跳转中")) {
 - `url` {string} 请求的 URL 地址，需要以"http://"或"https://"开头。如果 url 没有以"http://"开头，则默认为"http://"。
 - `data` {Object} POST 数据。
 - `options` {Object} 请求选项。
-- `callback` {Function} 回调，其参数是一个[Response](#response)对象。如果不加回调参数，则该请求将阻塞、同步地执行。
+- `callback` {Function} 回调，其参数是一个[Response][response]对象。如果不加回调参数，则该请求将阻塞、同步地执行。
 
-以 JSON 格式向目标 Url 发起 POST 请求。如果没有回调函数，则在请求完成或失败时返回此次请求的响应(参见[Response](#response))。
+以 JSON 格式向目标 Url 发起 POST 请求。如果没有回调函数，则在请求完成或失败时返回此次请求的响应(参见[Response][response])。
 
 JSON 格式指的是，将会调用`JSON.stringify()`把 data 对象转换为 JSON 字符串，并在 HTTP 头部信息中把"Content-Type"属性置为"application/json"。这种方式是 AngularJS 的 ajax 函数的默认方式。
 
@@ -130,7 +132,7 @@ toastLog(r.body.string());
 - `options` {Object} 请求选项。
 - `callback` {Function} 回调，其参数是一个`Response`对象。如果不加回调参数，则该请求将阻塞、同步地执行。
 
-向目标地址发起类型为 multipart/form-data 的请求（通常用于文件上传等), 其中 files 参数是{name1: value1, name2: value2, ...}的键值对，value 的格式可以是以下几种情况：
+向目标地址发起类型为 multipart/form-data 的请求(通常用于文件上传等), 其中 files 参数是{name1: value1, name2: value2, ...}的键值对，value 的格式可以是以下几种情况：
 
 1. `string`
 2. 文件类型，即 open()返回的类型
@@ -177,17 +179,17 @@ log(res.body.string());
 ## http.request(url[, options, callback])
 
 - `url` {string} 请求的 URL 地址，需要以"http://"或"https://"开头。如果 url 没有以"http://"开头，则默认为"http://"。
-- `options` {Object} 请求选项。参见[http.buildRequest()]()。
-- `callback` {Function} 回调，其参数是一个[Response](#response)对象。如果不加回调参数，则该请求将阻塞、同步地执行。
+- `options` {Object} 请求选项。
+- `callback` {Function} 回调，其参数是一个[Response][response]对象。如果不加回调参数，则该请求将阻塞、同步地执行。
 
-对目标地址 url 发起一次 HTTP 请求。如果没有回调函数，则在请求完成或失败时返回此次请求的响应(参见[Response](#response))。
+对目标地址 url 发起一次 HTTP 请求。如果没有回调函数，则在请求完成或失败时返回此次请求的响应(参见[Response][response])。
 
 选项 options 可以包含以下属性：
 
-- `headers` {Object} 键值对形式的 HTTP 头部信息。有关 HTTP 头部信息，参见[菜鸟教程：HTTP 响应头信息](http://www.runoob.com/http/http-header-fields.html)。
+- `headers` {Object} 键值对形式的 HTTP 头部信息。有关 HTTP 头部信息，参见[菜鸟教程：HTTP 响应头信息][菜鸟教程：http 响应头信息]。
 - `method` {string} HTTP 请求方法。包括"GET", "POST", "PUT", "DELET", "PATCH"。
-- `contentType` {string} HTTP 头部信息中的"Content-Type", 表示 HTTP 请求的内容类型。例如"text/plain", "application/json"。更多信息参见[菜鸟教程：HTTP contentType](http://www.runoob.com/http/http-content-type.html)。
-- `body` {string} | {Array} | {Function} HTTP 请求的内容。可以是一个字符串，也可以是一个字节数组；或者是一个以[BufferedSink](https://github.com/square/okio/blob/master/okio/src/main/java/okio/BufferedSink.java)为参数的函数。
+- `contentType` {string} HTTP 头部信息中的"Content-Type", 表示 HTTP 请求的内容类型。例如"text/plain", "application/json"。更多信息参见[菜鸟教程：HTTP contentType][菜鸟教程：http contenttype]。
+- `body` {string} | {Array} | {Function} HTTP 请求的内容。可以是一个字符串，也可以是一个字节数组；或者是一个以[BufferedSink][bufferedsink]为参数的函数。
 
 该函数是 get, post, postJson 等函数的基础函数。因此除非是 PUT, DELET 等请求，或者需要更高定制的 HTTP 请求，否则直接使用 get, post, postJson 等函数会更加方便。
 
@@ -197,19 +199,19 @@ HTTP 请求的响应。
 
 ## Response.statusCode
 
-- {number}
+- `retrun` {number}
 
 当前响应的 HTTP 状态码。例如 200(OK), 404(Not Found)等。
 
-有关 HTTP 状态码的信息，参见[菜鸟教程：HTTP 状态码](http://www.runoob.com/http/http-status-codes.html)。
+有关 HTTP 状态码的信息，参见[菜鸟教程：HTTP 状态码][菜鸟教程：http 状态码]。
 
 ## Response.statusMessage
 
-- {string}
+- `retrun` {string}
 
 当前响应的 HTTP 状态信息。例如"OK", "Bad Request", "Forbidden"。
 
-有关 HTTP 状态码的信息，参见[菜鸟教程：HTTP 状态码](http://www.runoob.com/http/http-status-codes.html)。
+有关 HTTP 状态码的信息，参见[菜鸟教程：HTTP 状态码][菜鸟教程：http 状态码]。
 
 例子：
 
@@ -226,11 +228,11 @@ if (res.statusCode >= 200 && res.statusCode < 300) {
 
 ## Response.headers
 
-- {Object}
+- `retrun` {Object}
 
 当前响应的 HTTP 头部信息。该对象的键是响应头名称，值是各自的响应头值。 所有响应头名称都是小写的(吗)。
 
-有关 HTTP 头部信息，参见[菜鸟教程：HTTP 响应头信息](http://www.runoob.com/http/http-header-fields.html)。
+有关 HTTP 头部信息，参见[菜鸟教程：HTTP 响应头信息][菜鸟教程：http 响应头信息]。
 
 例子:
 
@@ -245,7 +247,7 @@ for (var headerName in res.headers) {
 
 ## Response.body
 
-- {Object}
+- `retrun` {Object}
 
 当前响应的内容。他有以下属性和函数：
 
@@ -254,17 +256,29 @@ for (var headerName in res.headers) {
 - json() {Object} 把响应内容作为 JSON 格式的数据并调用 JSON.parse，返回解析后的对象
 - contentType {string} 当前响应的内容类型
 
+**注意，string 和 json 二选一，不能同时使用**
+
 ## Response.request
 
-- {Request}  
-  当前响应所对应的请求。参见[Request][]。
+- `retrun` {Request}
+
+当前响应所对应的请求。参见[Request][]。
 
 ## Response.url
 
-- {number}
-  当前响应所对应的请求 URL。
+- `retrun` {number}
+
+当前响应所对应的请求 URL。
 
 ## Response.method
 
-- {string}  
-  当前响应所对应的 HTTP 请求的方法。例如"GET", "POST", "PUT"等。
+- `retrun` {string}
+
+当前响应所对应的 HTTP 请求的方法。例如"GET", "POST", "PUT"等。
+
+[http.request()]: #httprequesturl-options-callback
+[response]: #response
+[菜鸟教程：http 响应头信息]: http://www.runoob.com/http/http-header-fields.html
+[菜鸟教程：http contenttype]: http://www.runoob.com/http/http-content-type.html
+[bufferedsink]: https://github.com/square/okio/blob/master/okio/src/main/java/okio/BufferedSink.java
+[菜鸟教程：http 状态码]: http://www.runoob.com/http/http-status-codes.html

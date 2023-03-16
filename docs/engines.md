@@ -1,6 +1,6 @@
-# Engines <Badge type="tip" text="稳定" vertical="middle" />
+# 脚本引擎-engines
 
-> 稳定性: 稳定
+<Badge type="tip" text="稳定" vertical="middle" />
 
 engines 模块包含了一些与脚本环境、脚本运行、脚本引擎有关的函数，包括运行其他脚本，关闭脚本等。
 
@@ -9,8 +9,6 @@ engines 模块包含了一些与脚本环境、脚本运行、脚本引擎有关
 ```js
 toast(engines.myEngine().cwd());
 ```
-
-# Engines
 
 ## engines.execScript(name, script[, config])
 
@@ -27,7 +25,6 @@ toast(engines.myEngine().cwd());
 所谓新的脚本环境，指定是，脚本中的变量和原脚本的变量是不共享的，并且，脚本会在新的线程中运行。
 
 最简单的例子如下：
-z
 
 ```js
 engines.execScript("hello world", "toast('hello world')");
@@ -96,8 +93,9 @@ engines.execScriptFile("/sdcard/脚本/1.js");
   - `loopTimes` {number} 循环运行次数，默认为 1。0 为无限循环。
   - `interval` {number} 循环运行时两次运行之间的时间间隔，默认为 0
   - `path` {Array} | {string} 指定脚本运行的目录。这些路径会用于 require 时寻找模块文件。
+- `return` {[ScriptExecution](#scriptexecution)}
 
-在新的脚本环境中运行录制文件 path。返回一个[ScriptExecution](#scriptexecution)对象。
+在新的脚本环境中运行录制文件 path。
 
 ```js
 engines.execAutoFile("/sdcard/脚本/1.auto");
@@ -113,9 +111,11 @@ engines.execAutoFile("/sdcard/脚本/1.auto");
 
 ## engines.myEngine()
 
-返回当前脚本的脚本引擎对象([ScriptEngine](#scriptengine))
+<Badge type="tip" text="v4.1.0" vertical="middle" />
+- `return` {[ScriptEngine](#scriptengine)}
 
-**[v4.1.0 新增]**
+返回当前脚本的脚本引擎对象。
+
 特别的，该对象可以通过`execArgv`来获取他的运行参数，包括外部参数、intent 等。例如：
 
 ```js
@@ -126,7 +126,7 @@ log(engines.myEngine().execArgv);
 
 ## engines.all()
 
-- 返回 {Array}
+- `return` {Array}
 
 返回当前所有正在运行的脚本的脚本引擎[ScriptEngine](#scriptengine)的数组。
 
@@ -170,13 +170,13 @@ log(e.getEngine().isDestroyed());
 
 ## ScriptEngine.cwd()
 
-- 返回 {string}
+- `return` {string}
 
 返回脚本执行的路径。对于一个脚本文件而言为这个脚本所在的文件夹；对于其他脚本，例如字符串脚本，则为`null`或者执行时的设置值。
 
 ## ScriptEngine.getSource()
 
-- 返回 [ScriptSource](#scriptsource)
+- `return` [ScriptSource](#scriptsource)
 
 返回当前脚本引擎正在执行的脚本对象。
 
@@ -219,24 +219,24 @@ e.getEngine().emit("say", "你好");
 
 ## delay
 
-- {number}
+- `return` {number}
 
 延迟执行的毫秒数
 
 ## interval
 
-- {number}
+- `return` {number}
 
 循环运行时两次运行之间的时间间隔
 
 ## loopTimes
 
-- {number}
+- `return` {number}
 
 循环运行次数
 
 ## getPath()
 
-- 返回 {Array}
+- `return` {Array}
 
 返回一个字符串数组表示脚本运行时模块寻找的路径。

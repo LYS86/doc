@@ -1,12 +1,14 @@
 # 关于本文档
 
-我们使用一些标签来标记状态：
+文档中使用一些标签来标记状态：
 
 - <Badge type="tip" text="稳定" vertical="middle" /> 在未来的更新中这些模块已有的函数一般不会被更改，会保证后向兼容性。
 - <Badge type="warning" text="实验" vertical="middle" /> 在未来的更新中可能会更改或移除。应该谨慎使用这些函数或模块，或者仅用作临时或试验用途。
 - <Badge type="danger" text="弃用" vertical="middle" /> 在未来的更新中将很快会被移除或更改。应该在脚本中移除对这些函数的使用，以免后续出现意料之外的问题。
 - <Badge type="tip" text="v4.1.0+" vertical="middle" /> 版本号，代表该函数在某个版本加入，v：版本，数字：版本号，+：后续版本
-- <Badge type="tip" text="Root" vertical="middle" /> 需要 Root 运行
+- <Badge type="tip" text="Android 7+" vertical="middle" /> 安卓版本，低于此版本无效果
+- <Badge type="tip" text="Root" vertical="middle" /> 基于 Root 运行
+- <Badge type="tip" text="无障碍" vertical="middle" /> 基于 无障碍 运行
 
 ## images.detectsColor(image, color, x, y[, threshold = 16, algorithm = "diff"])
 

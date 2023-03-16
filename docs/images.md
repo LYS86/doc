@@ -1,5 +1,6 @@
+# 图色模块-Images
 
-# Images <Badge type="tip" text="稳定" vertical="middle" />
+<Badge type="tip" text="稳定" vertical="middle" />
 
 images 模块提供了一些手机设备中常见的图片处理函数，包括截图、读写图片、图片剪裁、旋转、二值化、找色找图等。
 该模块分为两个部分，找图找色部分和图片处理部分。
@@ -17,28 +18,30 @@ img.recycle();
 
 例外的是，`caputerScreen()`返回的图片不需要回收。
 
-## 图片处理
+# 图片处理
 
-### images.read(path)
+## images.read(path)
 
 - `path` {string} 图片路径
+- `retrun` {Image}
 
 读取在路径 path 的图片文件并返回一个 Image 对象。如果文件不存在或者文件无法解码则返回 null。
 
-### images.load(url)
+## images.load(url)
 
 - `url` {string} 图片 URL 地址
+- `retrun` {Image}
 
 加载在地址 URL 的网络图片并返回一个 Image 对象。如果地址不存在或者图片无法解码则返回 null。
 
-### images.copy(img)
+## images.copy(img)
 
 - `img` {Image} 图片
-- 返回 {Image}
+- `retrun` {Image}
 
 复制一张图片并返回新的副本。该函数会完全复制 img 对象的数据。
 
-### images.save(image, path[, format = "png", quality = 100])
+## images.save(image, path[, format = "png", quality = 100])
 
 - `image` {Image} 图片
 - `path` {string} 路径
@@ -57,14 +60,14 @@ images.save(img, "/sdcard/1.jpg", "jpg", 50);
 app.viewFile("/sdcard/1.jpg");
 ```
 
-### images.fromBase64(base64)
+## images.fromBase64(base64)
 
 - `base64` {string} 图片的 Base64 数据
-- 返回 {Image}
+- `retrun` {Image}
 
 解码 Base64 数据并返回解码后的图片 Image 对象。如果 base64 无法解码则返回`null`。
 
-### images.toBase64(image[, format = "png", quality = 100])
+## images.toBase64(image[, format = "png", quality = 100])
 
 - `image` {image} 图片
 - `format` {string} 图片格式，可选的值为:
@@ -72,17 +75,17 @@ app.viewFile("/sdcard/1.jpg");
   - `jpeg`/`jpg`
   - `webp`
 - `quality` {number} 图片质量，为 0~100 的整数值
-- 返回 {string}
+- `retrun` {string}
 
 把图片编码为 base64 数据并返回。
 
-### images.fromBytes(bytes)
+## images.fromBytes(bytes)
 
 - `bytes` {byte[]} 字节数组
 
 解码字节数组 bytes 并返回解码后的图片 Image 对象。如果 bytes 无法解码则返回`null`。
 
-### images.toBytes(img[, format = "png", quality = 100])
+## images.toBytes(img[, format = "png", quality = 100])
 
 - `img` {image} 图片
 - `format` {string} 图片格式，可选的值为:
@@ -90,18 +93,18 @@ app.viewFile("/sdcard/1.jpg");
   - `jpeg`/`jpg`
   - `webp`
 - `quality` {number} 图片质量，为 0~100 的整数值
-- 返回 {byte[]}
+- `retrun` {byte[]}
 
 把图片编码为字节数组并返回。
 
-### images.clip(img, x, y, w, h)
+## images.clip(img, x, y, w, h)
 
 - `img` {Image} 图片
 - `x` {number} 剪切区域的左上角横坐标
 - `y` {number} 剪切区域的左上角纵坐标
 - `w` {number} 剪切区域的宽度
 - `h` {number} 剪切区域的高度
-- 返回 {Image}
+- `retrun` {Image}
 
 从图片 img 的位置(x, y)处剪切大小为 w \* h 的区域，并返回该剪切区域的新图片。
 
@@ -111,9 +114,9 @@ var clip = images.clip(src, 100, 100, 400, 400);
 images.save(clip, "/sdcard/clip.png");
 ```
 
-### images.resize(img, size[, interpolation])
+## images.resize(img, size[, interpolation])
 
-**[v4.1.0 新增]**
+<Badge type="tip" text="v4.1.0+" vertical="middle" />
 
 - `img` {Image} 图片
 - `size` {Array} 两个元素的数组[w, h]，分别表示宽度和高度；如果只有一个元素，则宽度和高度相等
@@ -123,16 +126,16 @@ images.save(clip, "/sdcard/clip.png");
   - `AREA` 区域插值
   - `CUBIC` 三次样条插值
   - `LANCZOS4` Lanczos 插值
-    参见[InterpolationFlags](https://docs.opencv.org/3.4.4/da/d54/group__imgproc__transform.html#ga5bb5a1fea74ea38e1a5445ca803ff121)
-- 返回 {Image}
+    参见[InterpolationFlags][interpolationflags]
+- `retrun` {Image}
 
 调整图片大小，并返回调整后的图片。例如把图片放缩为 200\*300：`images.resize(img, [200, 300])`。
 
-参见[Imgproc.resize](https://docs.opencv.org/3.4.4/da/d54/group__imgproc__transform.html#ga47a974309e9102f5f08231edc7e7529d)。
+参见[Imgproc.resize][imgproc.resize]。
 
-### images.scale(img, fx, fy[, interpolation])
+## images.scale(img, fx, fy[, interpolation])
 
-**[v4.1.0 新增]**
+<Badge type="tip" text="v4.1.0+" vertical="middle" />
 
 - `img` {Image} 图片
 - `fx` {number} 宽度放缩倍数
@@ -143,28 +146,28 @@ images.save(clip, "/sdcard/clip.png");
   - `AREA` 区域插值
   - `CUBIC` 三次样条插值
   - `LANCZOS4` Lanczos 插值
-    参见[InterpolationFlags](https://docs.opencv.org/3.4.4/da/d54/group__imgproc__transform.html#ga5bb5a1fea74ea38e1a5445ca803ff121)
-- 返回 {Image}
+    参见[InterpolationFlags][interpolationflags]
+- `retrun` {Image}
 
 放缩图片，并返回放缩后的图片。例如把图片变成原来的一半：`images.scale(img, 0.5, 0.5)`。
-参见[Imgproc.resize](https://docs.opencv.org/3.4.4/da/d54/group__imgproc__transform.html#ga47a974309e9102f5f08231edc7e7529d)。
+参见[Imgproc.resize][imgproc.resize]。
 
-### images.rotate(img, degress[, x, y])
+## images.rotate(img, degress[, x, y])
 
-**[v4.1.0 新增]**
+<Badge type="tip" text="v4.1.0+" vertical="middle" />
 
 - `img` {Image} 图片
 - `degress` {number} 旋转角度。
 - `x` {number} 旋转中心 x 坐标，默认为图片中点
 - `y` {number} 旋转中心 y 坐标，默认为图片中点
-- 返回 {Image}
+- `retrun` {Image}
 
 将图片逆时针旋转 degress 度，返回旋转后的图片对象。
 例如逆时针旋转 90 度为`images.rotate(img, 90)`。
 
-### images.concat(img1, img2, [direction])
+## images.concat(img1, img2, [direction])
 
-**[v4.1.0 新增]**
+<Badge type="tip" text="v4.1.0+" vertical="middle" />
 
 - `img1` {Image} 图片 1
 - `img2` {Image} 图片 2
@@ -173,27 +176,27 @@ images.save(clip, "/sdcard/clip.png");
   - `RIGHT` 将图片 2 接到图片 1 右边
   - `TOP` 将图片 2 接到图片 1 上边
   - `BOTTOM` 将图片 2 接到图片 1 下边
-- 返回 {Image}
+- `retrun` {Image}
 
 连接两张图片，并返回连接后的图像。如果两张图片大小不一致，小的那张将适当居中。
 
-### images.grayscale(img)
+## images.grayscale(img)
 
-**[v4.1.0 新增]**
+<Badge type="tip" text="v4.1.0+" vertical="middle" />
 
 - `img` {Image} 图片
-- 返回 {Image}
+- `retrun` {Image}
 
 灰度化图片，并返回灰度化后的图片。
 
-### image.threshold(img, threshold, maxVal[, type])
+## image.threshold(img, threshold, maxVal[, type])
 
-**[v4.1.0 新增]**
+<Badge type="tip" text="v4.1.0+" vertical="middle" />
 
 - `img` {Image} 图片
 - `threshold` {number} 阈值
 - `maxVal` {number} 最大值
-- `type` {string} 阈值化类型，默认为"BINARY"，参见[ThresholdTypes](https://docs.opencv.org/3.4.4/d7/d1b/group__imgproc__misc.html#gaa9e58d2860d4afa658ef70a9b1115576), 可选的值:
+- `type` {string} 阈值化类型，默认为"BINARY"，参见[ThresholdTypes][thresholdtypes], 可选的值:
   - `BINARY`
   - `BINARY_INV`
   - `TRUNC`
@@ -201,14 +204,14 @@ images.save(clip, "/sdcard/clip.png");
   - `TOZERO_INV`
   - `OTSU`
   - `TRIANGLE`
-- 返回 {Image}
+- `retrun` {Image}
 
 将图片阈值化，并返回处理后的图像。可以用这个函数进行图片二值化。例如：`images.threshold(img, 100, 255, "BINARY")`，这个代码将图片中大于 100 的值全部变成 255，其余变成 0，从而达到二值化的效果。如果 img 是一张灰度化图片，这个代码将会得到一张黑白图片。
-可以参考有关博客（比如[threshold 函数的使用](https://blog.csdn.net/u012566751/article/details/77046445)）或者 OpenCV 文档[threshold](https://docs.opencv.org/3.4.4/d7/d1b/group__imgproc__misc.html#gae8a4a146d1ca78c626a53577199e9c57)。
+可以参考有关博客（比如[threshold 函数的使用][threshold 函数的使用]）或者 OpenCV 文档[threshold][threshold]。
 
-### images.adaptiveThreshold(img, maxValue, adaptiveMethod, thresholdType, blockSize, C)
+## images.adaptiveThreshold(img, maxValue, adaptiveMethod, thresholdType, blockSize, C)
 
-**[v4.1.0 新增]**
+<Badge type="tip" text="v4.1.0+" vertical="middle" />
 
 - `img` {Image} 图片
 - `maxValue` {number} 最大值
@@ -220,53 +223,53 @@ images.save(clip, "/sdcard/clip.png");
   - `BINARY_INV`
 - `blockSize` {number} 邻域块大小
 - `C` {number} 偏移值调整量
-- 返回 {Image}
+- `retrun` {Image}
 
 对图片进行自适应阈值化处理，并返回处理后的图像。
-可以参考有关博客（比如[threshold 与 adaptiveThreshold](https://blog.csdn.net/guduruyu/article/details/68059450)）或者 OpenCV 文档[adaptiveThreshold](https://docs.opencv.org/3.4.4/d7/d1b/group__imgproc__misc.html#ga72b913f352e4a1b1b397736707afcde3)。
+可以参考有关博客（比如[threshold 与 adaptiveThreshold][threshold 与 adaptivethreshold]）或者 OpenCV 文档[adaptiveThreshold][adaptivethreshold]。
 
-### images.cvtColor(img, code[, dstCn])
+## images.cvtColor(img, code[, dstCn])
 
-**[v4.1.0 新增]**
+<Badge type="tip" text="v4.1.0+" vertical="middle" />
 
 - `img` {Image} 图片
-- `code` {string} 颜色空间转换的类型，可选的值有一共有 205 个（参见[ColorConversionCodes](https://docs.opencv.org/3.4.4/d8/d01/group__imgproc__color__conversions.html#ga4e0972be5de079fed4e3a10e24ef5ef0)），这里只列出几个：
+- `code` {string} 颜色空间转换的类型，可选的值有一共有 205 个（参见[ColorConversionCodes][colorconversioncodes]），这里只列出几个：
   - `BGR2GRAY` BGR 转换为灰度
   - `BGR2HSV` BGR 转换为 HSV
   - ``
 - `dstCn` {number} 目标图像的颜色通道数量，如果不填写则根据其他参数自动决定。
-- 返回 {Image}
+- `retrun` {Image}
 
 对图像进行颜色空间转换，并返回转换后的图像。
-可以参考有关博客（比如[颜色空间转换](https://blog.csdn.net/u011574296/article/details/70896811?locationNum=14&fps=1)）或者 OpenCV 文档[cvtColor](https://docs.opencv.org/3.4.4/d8/d01/group__imgproc__color__conversions.html#ga397ae87e1288a81d2363b61574eb8cab)。
+可以参考有关博客（比如[颜色空间转换][颜色空间转换]）或者 OpenCV 文档[cvtColor][cvtcolor]。
 
-### images.inRange(img, lowerBound, upperBound)
+## images.inRange(img, lowerBound, upperBound)
 
-**[v4.1.0 新增]**
+<Badge type="tip" text="v4.1.0+" vertical="middle" />
 
 - `img` {Image} 图片
 - `lowerBound` {string} | {number} 颜色下界
 - `upperBound` {string} | {number} 颜色下界
-- 返回 {Image}
+- `retrun` {Image}
 
 将图片二值化，在 lowerBound~upperBound 范围以外的颜色都变成 0，在范围以内的颜色都变成 255。
 例如`images.inRange(img, "#000000", "#222222")`。
 
-### images.interval(img, color, interval)
+## images.interval(img, color, interval)
 
-**[v4.1.0 新增]**
+<Badge type="tip" text="v4.1.0+" vertical="middle" />
 
 - `img` {Image} 图片
 - `color` {string} | {number} 颜色
 - `interval` {number} 每个通道的范围间
-- 返回 {Image
+- `retrun` {Image}
 
 将图片二值化，在 color-interval ~ color+interval 范围以外的颜色都变成 0，在范围以内的颜色都变成 255。这里对 color 的加减是对每个通道而言的。  
 例如`images.interval(img, "#888888", 16)`，每个通道的颜色值均为 0x88，加减 16 后的范围是[0x78, 0x98]，因此这个代码将把#787878~#989898 的颜色变成#FFFFFF，而把这个范围以外的变成#000000。
 
-### images.blur(img, size[, anchor, type])
+## images.blur(img, size[, anchor, type])
 
-**[v4.1.0 新增]**
+<Badge type="tip" text="v4.1.0+" vertical="middle" />
 
 - `img` {Image} 图片
 - `size` {Array} 定义滤波器的大小，如[3, 3]
@@ -281,48 +284,48 @@ images.save(clip, "/sdcard/clip.png");
   - `REFLECT101` same as BORDER_REFLECT_101
   - `DEFAULT` same as BORDER_REFLECT_101
   - `ISOLATED` do not look outside of ROI
-- 返回 {Image}
+- `retrun` {Image}
 
 对图像进行模糊（平滑处理），返回处理后的图像。  
-可以参考有关博客（比如[实现图像平滑处理](https://www.cnblogs.com/denny402/p/3848316.html)）或者 OpenCV 文档[blur](https://docs.opencv.org/3.4.4/d4/d86/group__imgproc__filter.html#ga8c45db9afe636703801b0b2e440fce37)。
+可以参考有关博客（比如[实现图像平滑处理][实现图像平滑处理]）或者 OpenCV 文档[blur][blur]。
 
-### images.medianBlur(img, size)
+## images.medianBlur(img, size)
 
-**[v4.1.0 新增]**
+<Badge type="tip" text="v4.1.0+" vertical="middle" />
 
 - `img` {Image} 图片
 - `size` {Array} 定义滤波器的大小，如[3, 3]
-- 返回 {Image}
+- `retrun` {Image}
 
 对图像进行中值滤波，返回处理后的图像。  
-可以参考有关博客（比如[实现图像平滑处理](https://www.cnblogs.com/denny402/p/3848316.html)）或者 OpenCV 文档[blur](https://docs.opencv.org/3.4.4/d4/d86/group__imgproc__filter.html#ga564869aa33e58769b4469101aac458f9)。
+可以参考有关博客（比如[实现图像平滑处理][实现图像平滑处理]）或者 OpenCV 文档[medianBlur][medianblur]。
 
-### images.gaussianBlur(img, size[, sigmaX, sigmaY, type])
+## images.gaussianBlur(img, size[, sigmaX, sigmaY, type])
 
-**[v4.1.0 新增]**
+<Badge type="tip" text="v4.1.0+" vertical="middle" />
 
 - `img` {Image} 图片
 - `size` {Array} 定义滤波器的大小，如[3, 3]
 - `sigmaX` {number} x 方向的标准方差，不填写则自动计算
 - `sigmaY` {number} y 方向的标准方差，不填写则自动计算
-- `type` {string} 推断边缘像素类型，默认为"DEFAULT"，参见[images.blur](#imagesblurimg-size-anchor-type)
-- 返回 {Image}
+- `type` {string} 推断边缘像素类型，默认为"DEFAULT"，参见[images.blur][images.blur]
+- `retrun` {Image}
 
 对图像进行高斯模糊，返回处理后的图像。  
-可以参考有关博客（比如[实现图像平滑处理](https://www.cnblogs.com/denny402/p/3848316.html)）或者 OpenCV 文档[GaussianBlur](https://docs.opencv.org/3.4.4/d4/d86/group__imgproc__filter.html#gaabe8c836e97159a9193fb0b11ac52cf1)。
+可以参考有关博客（比如[实现图像平滑处理][实现图像平滑处理]）或者 OpenCV 文档[GaussianBlur][gaussianblur]。
 
-### images.matToImage(mat)
+## images.matToImage(mat)
 
-**[v4.1.0 新增]**
+<Badge type="tip" text="v4.1.0+" vertical="middle" />
 
 - `mat` {Mat} OpenCV 的 Mat 对象
-- 返回 {Image}
+- `retrun` {Image}
 
 把 Mat 对象转换为 Image 对象。
 
-## 找图找色
+# 找图找色
 
-### images.requestScreenCapture([landscape])
+## images.requestScreenCapture([landscape])
 
 - `landscape` {boolean} 截屏方向
   - `true` 横屏截图
@@ -366,7 +369,7 @@ if (!requestScreenCapture()) {
 
 该函数也可以作为全局函数使用。
 
-### images.captureScreen()
+## images.captureScreen()
 
 - `return` {Image}
 
@@ -390,14 +393,14 @@ toast(colors.toString(color));
 
 该函数也可以作为全局函数使用。
 
-### images.captureScreen(path)
+## images.captureScreen(path)
 
 - `path` {string} 截图保存路径
 
 截取当前屏幕并以 PNG 格式保存到 path 中。如果文件不存在会被创建；文件存在会被覆盖。
 该函数不会返回任何值。该函数也可以作为全局函数使用。
 
-### images.pixel(image, x, y)
+## images.pixel(image, x, y)
 
 - `image` {Image} 图片
 - `x` {number} 要获取的像素的横坐标。
@@ -407,7 +410,7 @@ toast(colors.toString(color));
 该值的格式为 0xAARRGGBB，是一个"32 位整数"(虽然 JavaScript 中并不区分整数类型和其他数值类型)。  
 坐标系以图片左上角为原点。以图片左侧边为 y 轴，上侧边为 x 轴。
 
-### images.readPixels(path)
+## images.readPixels(path)
 
 - `path` {string} 图片的地址
 
@@ -415,16 +418,16 @@ toast(colors.toString(color));
 
 读取图片的像素数据和宽高。
 
-### images.findColor(image, color, [options])
+## images.findColor(image, color, [options])
 
 - `image` {Image} 图片
-
 - `color` {number} | {string} 要寻找的颜色的 RGB 值。如果是一个整数，则以 0xRRGGBB 的形式代表 RGB 值（A 通道会被忽略）；如果是字符串，则以"#RRGGBB"代表其 RGB 值。
 - `options` {Object} 可选项包括：
   - `region` {Array} 找色区域。是一个两个或四个元素的数组。(region[0], region[1])表示找色区域的左上角；region[2]\*region[3]表示找色区域的宽高。如果 `region`只有两个元素，则找色区域为(region[0], region[1])到图片右下角。如果不指定`region`选项，则找色区域为整张图片。
   - `similarity` {number} 颜色相似度，范围为 0~1（越大越相似，1 为颜色相等，0 为任何颜色都能匹配）。
   - `threshold` {number} 颜色相似度的临界值，范围为 0 ~ 255（越小越相似，0 为颜色相等，255 为任何颜色都能匹配）。默认为 4。
   - `similarity`与`threshold`的换算为`similarity` = (255 - `threshold`) / 255 。二选一，同时存在则以`similarity`为准。
+- `return` {[Point][point]}
 
 在图片中寻找颜色 color。找到时返回找到的点 Point，找不到时返回 null。
 该函数也可以作为全局函数使用。  
@@ -464,7 +467,9 @@ if (point) {
 }
 ```
 
-### images.findColorInRegion(img, color, [x, y, width, height, threshold])
+## images.findColorInRegion(img, color, [x, y, width, height, threshold])
+
+- `return` {[Point][point]}
 
 区域找色的简便方法。
 相当于
@@ -478,7 +483,7 @@ images.findColor(img, color, {
 
 该函数也可以作为全局函数使用。
 
-### images.findColorEquals(img, color[, x, y, width, height])
+## images.findColorEquals(img, color[, x, y, width, height])
 
 - `img` {Image} 图片
 - `color` {number} | {string} 要寻找的颜色
@@ -486,7 +491,7 @@ images.findColor(img, color, {
 - `y` {number} 找色区域的左上角纵坐标
 - `width` {number} 找色区域的宽度
 - `height` {number} 找色区域的高度
-- 返回 {Point}
+- `return` {[Point][point]}
 
 在图片 img 指定区域中找到颜色和 color 完全相等的某个点，并返回该点的坐标；如果没有找到，则返回`null`。  
 找色区域通过`x`, `y`, `width`, `height`指定，如果不指定找色区域，则在整张图片中寻找。
@@ -506,7 +511,7 @@ if (p) {
 }
 ```
 
-### images.findAllPointsForColor(img, color, [options])
+## images.findAllPointsForColor(img, color, [options])
 
 - `img` {Image} 图片
 
@@ -525,7 +530,7 @@ if (p) {
 log(images.findAllPointsForColor(img, "#ffffff"));
 ```
 
-### images.findMultiColors(img, firstColor, colors[, options])
+## images.findMultiColors(img, firstColor, colors[, options])
 
 - `img` {Image} 要找色的图片
 - `firstColor` {number} | {string} 第一个点的颜色
@@ -533,6 +538,7 @@ log(images.findAllPointsForColor(img, "#ffffff"));
 - `options` {Object} 选项包括：
   - `region` {Array} 找色区域。是一个两个或四个元素的数组。(region[0], region[1])表示找色区域的左上角；region[2]\*region[3]表示找色区域的宽高。如果只有 region 只有两个元素，则找色区域为(region[0], region[1])到屏幕右下角。如果不指定 region 选项，则找色区域为整张图片。
   - `threshold` {number} 找色时颜色相似度的临界值，范围为 0 ~ 255（越小越相似，0 为颜色相等，255 为任何颜色都能匹配）,默认为 4。threshold 和浮点数相似度(0.0~1.0)的换算为 similarity = (255 - threshold) / 255.
+- `return` {[Point][point]}
 
 多点找色，类似于按键精灵的多点找色，其过程如下：
 
@@ -557,7 +563,7 @@ var p = images.findMultiColors(
 );
 ```
 
-### images.detectsColor(image, color, x, y[, threshold = 4, algorithm = "diff"])
+## images.detectsColor(image, color, x, y[, threshold = 4, algorithm = "diff"])
 
 - `image` {Image} 图片
 - `color` {number} | {string} 要检测的颜色
@@ -568,7 +574,7 @@ var p = images.findMultiColors(
   - `equal`: 相等匹配，只有与给定颜色 color 完全相等时才匹配。
   - `diff`: 差值匹配。与给定颜色的 R、G、B 差的绝对值之和小于 threshold 时匹配。
   - `rgb`: rgb 欧拉距离相似度。与给定颜色 color 的 rgb 欧拉距离小于等于 threshold 时匹配。
-  - `rgb+`: 加权 rgb 欧拉距离匹配([LAB Delta E](https://en.wikipedia.org/wiki/Color_difference))。
+  - `rgb+`: 加权 rgb 欧拉距离匹配([LAB Delta E][lab delta e])。
   - `hs`: hs 欧拉距离匹配。hs 为 HSV 空间的色调值。
 
 返回图片 image 在位置(x, y)处是否匹配到颜色 color。用于检测图片中某个位置是否是特定颜色。
@@ -592,7 +598,7 @@ if (images.detectsColor(img, "#fed9a8", x, y)) {
 }
 ```
 
-### images.findImage(img, template[, options])
+## images.findImage(img, template[, options])
 
 - `img` {Image} 大图片
 - `template` {Image} 小图片（模板）
@@ -600,6 +606,7 @@ if (images.detectsColor(img, "#fed9a8", x, y)) {
   - `threshold` {number} 图片相似度。取值范围为 0~1 的浮点数。默认值为 0.9。
   - `region` {Array} 找图区域。参见 findColor 函数关于 region 的说明。
   - `level` {number} **一般而言不必修改此参数**。不加此参数时该参数会根据图片大小自动调整。找图算法是采用图像金字塔进行的, level 参数表示金字塔的层次, level 越大可能带来越高的找图效率，但也可能造成找图失败（图片因过度缩小而无法分辨）或返回错误位置。因此，除非您清楚该参数的意义并需要进行性能调优，否则不需要用到该参数。
+- `return` {[Point][point]}
 
 找图。在大图片 img 中查找小图片 template 的位置（模块匹配），找到时返回位置坐标(Point)，找不到时返回 null。
 该函数也可以作为全局函数使用。
@@ -636,7 +643,7 @@ if (p) {
 }
 ```
 
-### images.findImageInRegion(img, template, [x, y, width, height, threshold])
+## images.findImageInRegion(img, template, [x, y, width, height, threshold])
 
 区域找图的简便方法。相当于：
 
@@ -649,7 +656,7 @@ images.findImage(img, template, {
 
 该函数也可以作为全局函数使用。
 
-### images.findCircles(gray, [options])
+## images.findCircles(gray, [options])
 
 - `gray` {Image} 灰度图片
 
@@ -681,9 +688,9 @@ gray.recycle();
 log(arr);
 ```
 
-### images.matchTemplate(img, template, [options])
+## images.matchTemplate(img, template, [options])
 
-**[v4.1.0 新增]**
+<Badge type="tip" text="v4.1.0+" vertical="middle" />
 
 - `img` {Image} 大图片
 - `template` {Image} 小图片（模板）
@@ -692,13 +699,13 @@ log(arr);
   - `region` {Array} 找图区域。参见 findColor 函数关于 region 的说明。
   - `max` {number} 找图结果最大数量，默认为 5
   - `level` {number} **一般而言不必修改此参数**。不加此参数时该参数会根据图片大小自动调整。找图算法是采用图像金字塔进行的, level 参数表示金字塔的层次, level 越大可能带来越高的找图效率，但也可能造成找图失败（图片因过度缩小而无法分辨）或返回错误位置。因此，除非您清楚该参数的意义并需要进行性能调优，否则不需要用到该参数。
-- 返回 {MatchingResult}
+- `retrun` {MatchingResult}
 
 在大图片中搜索小图片，并返回搜索结果 MatchingResult。该函数可以用于找图时找出多个位置，可以通过 max 参数控制最大的结果数量。也可以对匹配结果进行排序、求最值等操作。
 
 # MatchingResult
 
-**[v4.1.0 新增]**
+<Badge type="tip" text="v4.1.0+" vertical="middle" />
 
 ## MatchingResult.matches
 
@@ -719,53 +726,53 @@ result.matches.forEach((match) => {
 
 ## MatchingResult.points
 
-- 返回 {Array} 匹配位置的数组。
+- `retrun` {Array} 匹配位置的数组。
 
 ## MatchingResult.first()
 
-- 返回 {Match}
+- `retrun` {Match}
 
 第一个匹配结果。如果没有任何匹配，则返回`null`。
 
 ## MatchingResult.last()
 
-- 返回 {Match}
+- `retrun` {Match}
 
 最后一个匹配结果。如果没有任何匹配，则返回`null`。
 
 ## MatchingResult.leftmost()
 
-- 返回 {Match}
+- `retrun` {Match}
 
 位于大图片最左边的匹配结果。如果没有任何匹配，则返回`null`。
 
 ## MatchingResult.topmost()
 
-- 返回 {Match}
+- `retrun` {Match}
 
 位于大图片最上边的匹配结果。如果没有任何匹配，则返回`null`。
 
 ## MatchingResult.rightmost()
 
-- 返回 {Match}
+- `retrun` {Match}
 
 位于大图片最右边的匹配结果。如果没有任何匹配，则返回`null`。
 
 ## MatchingResult.bottommost()
 
-- 返回 {Match}
+- `retrun` {Match}
 
 位于大图片最下边的匹配结果。如果没有任何匹配，则返回`null`。
 
 ## MatchingResult.best()
 
-- 返回 {Match}
+- `retrun` {Match}
 
 相似度最高的匹配结果。如果没有任何匹配，则返回`null`。
 
 ## MatchingResult.worst()
 
-- 返回 {Match}
+- `retrun` {Match}
 
 相似度最低的匹配结果。如果没有任何匹配，则返回`null`。
 
@@ -791,6 +798,10 @@ log(result.sortBy("top-right"));
 # Image
 
 表示一张图片，可以是截图的图片，或者本地读取的图片，或者从网络获取的图片。
+
+## Image.recycle()
+
+释放图片
 
 ## Image.getWidth()
 
@@ -826,3 +837,23 @@ findColor, findImage 返回的对象。表示一个点（坐标）。
 ## Point.y
 
 纵坐标。
+
+[interpolationflags]: https://docs.opencv.org/3.4.4/da/d54/group__imgproc__transform.html#ga5bb5a1fea74ea38e1a5445ca803ff121
+[imgproc.resize]: https://docs.opencv.org/3.4.4/da/d54/group__imgproc__transform.html#ga47a974309e9102f5f08231edc7e7529d
+[interpolationflags]: https://docs.opencv.org/3.4.4/da/d54/group__imgproc__transform.html#ga5bb5a1fea74ea38e1a5445ca803ff121
+[thresholdtypes]: https://docs.opencv.org/3.4.4/d7/d1b/group__imgproc__misc.html#gaa9e58d2860d4afa658ef70a9b1115576
+[threshold 函数的使用]: https://blog.csdn.net/u012566751/article/details/77046445
+[threshold]: https://docs.opencv.org/3.4.4/d7/d1b/group__imgproc__misc.html#gae8a4a146d1ca78c626a53577199e9c57
+[threshold 与 adaptivethreshold]: https://blog.csdn.net/guduruyu/article/details/68059450
+[adaptivethreshold]: https://docs.opencv.org/3.4.4/d7/d1b/group__imgproc__misc.html#ga72b913f352e4a1b1b397736707afcde3
+[colorconversioncodes]: https://docs.opencv.org/3.4.4/d8/d01/group__imgproc__color__conversions.html#ga4e0972be5de079fed4e3a10e24ef5ef0
+[颜色空间转换]: https://blog.csdn.net/u011574296/article/details/70896811?locationNum=14&fps=1
+[cvtcolor]: https://docs.opencv.org/3.4.4/d8/d01/group__imgproc__color__conversions.html#ga397ae87e1288a81d2363b61574eb8cab
+[实现图像平滑处理]: https://www.cnblogs.com/denny402/p/3848316.html
+[blur]: https://docs.opencv.org/3.4.4/d4/d86/group__imgproc__filter.html#ga8c45db9afe636703801b0b2e440fce37
+[medianblur]: https://docs.opencv.org/3.4.4/d4/d86/group__imgproc__filter.html#ga564869aa33e58769b4469101aac458f9
+[images.blur]: #imagesblurimg-size-anchor-type
+[实现图像平滑处理]: https://www.cnblogs.com/denny402/p/3848316.html
+[gaussianblur]: https://docs.opencv.org/3.4.4/d4/d86/group__imgproc__filter.html#gaabe8c836e97159a9193fb0b11ac52cf1
+[lab delta e]: https://en.wikipedia.org/wiki/Color_difference
+[point]: #point

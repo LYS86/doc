@@ -1,142 +1,155 @@
-# Keys <Badge type="tip" text="稳定" vertical="middle" />
+# 按键模拟
+
+<Badge type="tip" text="稳定" vertical="middle" />
 
 按键模拟部分提供了一些模拟物理按键的全局函数，包括 Home、音量键、照相键等，有的函数依赖于无障碍服务，有的函数依赖于 root 权限。  
 一般来说，以大写字母开头的函数都依赖于 root 权限。执行此类函数时，如果没有 root 权限，则函数执行后没有效果，并会在控制台输出一个警告。
 
 ## back()
 
-- 返回 {boolean}
+<Badge type="tip" text="无障碍" vertical="middle" />
+- `retrun` {boolean}
 
-模拟按下返回键。返回是否执行成功。  
-此函数依赖于无障碍服务。
+模拟按下返回键。返回是否执行成功。
 
 ## home()
 
-- 返回 {boolean}
+<Badge type="tip" text="无障碍" vertical="middle" />
+- `retrun` {boolean}
 
-模拟按下 Home 键。返回是否执行成功。  
-此函数依赖于无障碍服务。
+模拟按下 Home 键。返回是否执行成功。
 
 ## powerDialog()
 
-- 返回 {boolean}
+<Badge type="tip" text="无障碍" vertical="middle" />
+- `retrun` {boolean}
 
-弹出电源键菜单。返回是否执行成功。  
-此函数依赖于无障碍服务。
+弹出电源键菜单。返回是否执行成功。
 
 ## notifications()
 
-- 返回 {boolean}
+<Badge type="tip" text="无障碍" vertical="middle" />
+- `retrun` {boolean}
 
-拉出通知栏。返回是否执行成功。  
-此函数依赖于无障碍服务。
+拉出通知栏。返回是否执行成功。
 
 ## quickSettings()
 
-- 返回 {boolean}
+<Badge type="tip" text="无障碍" vertical="middle" />
 
-显示快速设置(下拉通知栏到底)。返回是否执行成功。  
-此函数依赖于无障碍服务。
+- `retrun` {boolean}
+
+显示快速设置(下拉通知栏到底)。返回是否执行成功。
 
 ## recents()
 
-- 返回 {boolean}
+<Badge type="tip" text="无障碍" vertical="middle" />
+- `retrun` {boolean}
 
-显示最近任务。返回是否执行成功。  
-此函数依赖于无障碍服务。
+显示最近任务。返回是否执行成功。
 
 ## splitScreen()
 
-- 返回 {boolean}
+<Badge type="tip" text="无障碍" vertical="middle" />
+- `retrun` {boolean}
 
 分屏。返回是否执行成功。  
-此函数依赖于无障碍服务, 并且需要系统自身功能的支持。
+此函数**需要系统自身功能的支持。**
 
 ## takeScreenshot()
 
-- 返回 {boolean}
-- 需要 Android 9 以上
+<Badge type="tip" text="无障碍" vertical="middle" /> <Badge type="tip" text="Android 9+" vertical="middle" />
+
+- `retrun` {boolean}
 
 模拟按键 **电源键+音量下键** 截屏  
 不返回截屏得到的图片对象，只返回是否截图成功，图片保存到系统相册
 
 ## lockScreen()
 
-- 返回 {boolean}
-- 需要 Android 9 以上  
-  模拟按键 **电源键** 锁屏
+<Badge type="tip" text="无障碍" vertical="middle" /><Badge type="tip" text="Android 9+" vertical="middle" />
+
+- `retrun` {boolean}
+
+模拟按键 **电源键** 锁屏
 
 ## dismissNotificationShade()
 
-- 返回 {boolean}
-- **需要 Android 12 以上**
+<Badge type="tip" text="无障碍" vertical="middle" /><Badge type="tip" text="Android 12+" vertical="middle" />
+
+- `retrun` {boolean}
 
 关闭通知栏的操作
 
 ## keyCodeHeadsetHook()
 
-- 返回 {boolean}
-- **需要 Android 12 以上**
+<Badge type="tip" text="无障碍" vertical="middle" /><Badge type="tip" text="Android 12+" vertical="middle" />
+
+- `retrun` {boolean}
 
 发送 KEYCODE_HEADSETHOOK KeyEvent 的动作，用于接听/挂断通话和播放/停止媒体
 
 ## accessibilityShortcut()
 
-- 返回 {boolean}
-- **需要 Android 12 以上**
+<Badge type="tip" text="无障碍" vertical="middle" /><Badge type="tip" text="Android 12+" vertical="middle" />
+
+- `retrun` {boolean}
 
 触发辅助功能快捷方式的操作。此快捷方式有一个硬件触发器并且可以通过按住两个音量键来激活。
 
 ## accessibilityButtonChooser()
 
-- 返回 {boolean}
-- **需要 Android 12 以上**
+<Badge type="tip" text="无障碍" vertical="middle" /><Badge type="tip" text="Android 12+" vertical="middle" />
+
+- `retrun` {boolean}
 
 调出辅助功能按钮的选择器菜单的操作
 
 ## accessibilityButton()
 
-- 返回 {boolean}
-- **需要 Android 12 以上**
+<Badge type="tip" text="无障碍" vertical="middle" /><Badge type="tip" text="Android 12+" vertical="middle" />
+
+- `retrun` {boolean}
 
 触发辅助功能按钮的操作
 
 ## accessibilityAllApps()
 
-- 返回 {boolean}
-- **需要 Android 12 以上**
+<Badge type="tip" text="无障碍" vertical="middle" /><Badge type="tip" text="Android 12+" vertical="middle" />
+
+- `retrun` {boolean}
 
 显示 Launcher（启动器） 的所有应用的操作。
 
 ## Home()
 
-模拟按下 Home 键。  
-此函数依赖于 root 权限。
+<Badge type="tip" text="Root" vertical="middle" />
+模拟按下 Home 键。
 
 ## Back()
 
-模拟按下返回键。  
-此函数依赖于 root 权限。
+<Badge type="tip" text="Root" vertical="middle" />
+模拟按下返回键。
 
 ## Power()
 
-模拟按下电源键。  
-此函数依赖于 root 权限。
+<Badge type="tip" text="Root" vertical="middle" />
+模拟按下电源键。
 
 ## Menu()
 
-模拟按下菜单键。  
-此函数依赖于 root 权限。
+<Badge type="tip" text="Root" vertical="middle" />
+模拟按下菜单键。
 
 ## VolumeUp()
 
-按下音量上键。  
-此函数依赖于 root 权限。
+<Badge type="tip" text="Root" vertical="middle" />
+按下音量上键。
 
 ## VolumeDown()
 
-按键音量上键。  
-此函数依赖于 root 权限。
+<Badge type="tip" text="Root" vertical="middle" />
+按键音量上键。
 
 ## Camera()
 
@@ -144,28 +157,28 @@
 
 ## Up()
 
-模拟按下物理按键上。  
-此函数依赖于 root 权限。
+<Badge type="tip" text="Root" vertical="middle" />
+模拟按下物理按键上。
 
 ## Down()
 
-模拟按下物理按键下。  
-此函数依赖于 root 权限。
+<Badge type="tip" text="Root" vertical="middle" />
+模拟按下物理按键下。
 
 ## Left()
 
-模拟按下物理按键左。  
-此函数依赖于 root 权限。
+<Badge type="tip" text="Root" vertical="middle" />
+模拟按下物理按键左。
 
 ## Right()
 
-模拟按下物理按键右。  
-此函数依赖于 root 权限。
+<Badge type="tip" text="Root" vertical="middle" />
+模拟按下物理按键右。
 
 ## OK()
 
-模拟按下物理按键确定。  
-此函数依赖于 root 权限。
+<Badge type="tip" text="Root" vertical="middle" />
+模拟按下物理按键确定。
 
 ## Text(text)
 

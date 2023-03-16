@@ -1,4 +1,6 @@
-# shell 函数 <Badge type="tip" text="稳定" vertical="middle" />
+# shell 函数
+
+<Badge type="tip" text="稳定" vertical="middle" />
 
 shell 即 Unix Shell，在类 Unix 系统提供与操作系统交互的一系列命令。
 

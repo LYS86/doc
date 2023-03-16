@@ -1,4 +1,6 @@
-# Floaty <Badge type="tip" text="稳定" vertical="middle" />
+# 悬浮窗-floaty
+
+<Badge type="tip" text="稳定" vertical="middle" />
 
 floaty 模块提供了悬浮窗的相关函数，可以在屏幕上显示自定义悬浮窗，控制悬浮窗大小、位置等。
 
@@ -10,15 +12,15 @@ setInterval(() => {}, 1000);
 
 ## floaty.checkPermission()
 
-**[4.2.17 新增]**
+<Badge type="tip" text="4.2.17+" vertical="middle" />
 
-- 返回 {boolean}
+- `retrun` {boolean}
 
 返回当前应用是否有悬浮窗权限。（不会触发请求权限操作）
 
 ## floaty.requestPermission()
 
-**[4.2.17 新增]**
+<Badge type="tip" text="4.2.17+" vertical="middle" />
 
 跳转到系统的悬浮窗权限请求界面。
 

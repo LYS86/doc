@@ -347,7 +347,7 @@ dialogs
 
 ```js
 var input = threads.disposable();
-dialogas
+dialogs
   .build({
     title: "请输入您的年龄",
     inputPrefill: "18",

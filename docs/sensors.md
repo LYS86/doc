@@ -1,4 +1,6 @@
-# Sensors <Badge type="tip" text="稳定" vertical="middle" />
+# 传感器-sensors
+
+<Badge type="tip" text="稳定" vertical="middle" />
 
 sensors 模块提供了获取手机上的传感器的信息的支持，这些传感器包括距离传感器、光线光感器、重力传感器、方向传感器等。需要指出的是，脚本只能获取传感器的数据，**不能模拟或伪造传感器的数据和事件**，因此诸如模拟摇一摇的功能是无法实现的。
 

@@ -1,4 +1,6 @@
-# Timers <Badge type="tip" text="稳定" vertical="middle" />
+# 定时器-timers
+
+ <Badge type="tip" text="稳定" vertical="middle" />
 
 timers 模块暴露了一个全局的 API，用于在某个未来时间段调用调度函数。
 

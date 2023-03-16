@@ -1,4 +1,6 @@
-# Files <Badge type="tip" text="稳定" vertical="middle" />
+# 文件系统-files
+
+<Badge type="tip" text="稳定" vertical="middle" />
 
 files 模块提供了一些常见的文件处理，包括文件读写、移动、复制、删掉等。
 
@@ -7,7 +9,7 @@ files 模块提供了一些常见的文件处理，包括文件读写、移动�
 ## files.isFile(path)
 
 - `path` {string} 路径
-- 返回 {boolean}
+- `return` {boolean}
 
 返回路径 path 是否是文件。
 
@@ -19,7 +21,7 @@ log(files.isDir("/sdcard/文件.txt")); //返回true
 ## files.isDir(path)
 
 - `path` {string} 路径
-- 返回 {boolean}
+- `return` {boolean}
 
 返回路径 path 是否是文件夹。
 
@@ -31,7 +33,7 @@ log(files.isDir("/sdcard/文件.txt")); //返回false
 ## files.isEmptyDir(path)
 
 - `path` {string} 路径
-- 返回 {boolean}
+- `return` {boolean}
 
 返回文件夹 path 是否为空文件夹。如果该路径并非文件夹，则直接返回`false`。
 
@@ -39,14 +41,14 @@ log(files.isDir("/sdcard/文件.txt")); //返回false
 
 - `parent` {string} 父目录路径
 - `child` {string} 子路径
-- 返回 {string}
+- `return` {string}
 
 连接两个路径并返回，例如`files.join("/sdcard/", "1.txt")`返回"/sdcard/1.txt"。
 
 ## files.create(path)
 
 - `path` {string} 路径
-- 返回 {boolean}
+- `return` {boolean}
 
 创建一个文件或文件夹并返回是否创建成功。如果文件已经存在，则直接返回`false`。
 
@@ -57,7 +59,7 @@ files.create("/sdcard/新文件夹/");
 ## files.createWithDirs(path)
 
 - `path` {string} 路径
-- 返回 {boolean}
+- `return` {boolean}
 
 创建一个文件或文件夹并返回是否创建成功。如果文件所在文件夹不存在，则先创建他所在的一系列文件夹。如果文件已经存在，则直接返回`false`。
 
@@ -68,7 +70,7 @@ files.createWithDirs("/sdcard/新文件夹/新文件夹/新文件夹/1.txt");
 ## files.exists(path)
 
 - `path` {string} 路径
-- 返回 {boolean}
+- `return` {boolean}
 
 返回在路径 path 处的文件是否存在。
 
@@ -84,7 +86,7 @@ files.createWithDirs("/sdcard/新文件夹/新文件夹/新文件夹/1.txt");
 
 - `path` {string} 路径
 - `encoding` {string} 字符编码，可选，默认为 utf-8
-- 返回 {string}
+- `return` {string}
 
 读取文本文件 path 的所有内容并返回。如果文件不存在，则抛出`FileNotFoundException`。
 
@@ -95,7 +97,7 @@ log(files.read("/sdcard/1.txt"));
 ## files.readBytes(path)
 
 - `path` {string} 路径
-- 返回 {byte[]}
+- `return` {byte[]}
 
 读取文件 path 的所有内容并返回一个字节数组。如果文件不存在，则抛出`FileNotFoundException`。
 
@@ -163,7 +165,7 @@ app.viewFile("/sdcard/1.txt");
 
 - `fromPath` {string} 要复制的原文件路径
 - `toPath` {string} 复制到的文件路径
-- 返回 {boolean}
+- `return` {boolean}
 
 复制文件，返回是否复制成功。例如`files.copy("/sdcard/1.txt", "/sdcard/Download/1.txt")`。
 
@@ -171,7 +173,7 @@ app.viewFile("/sdcard/1.txt");
 
 - `fromPath` {string} 要移动的原文件路径
 - `toPath` {string} 移动到的文件路径
-- 返回 {boolean}
+- `return` {boolean}
 
 移动文件，返回是否移动成功。例如`files.move("/sdcard/1.txt", "/sdcard/Download/1.txt")`会把 1.txt 文件从 sd 卡根目录移动到 Download 文件夹。
 
@@ -179,7 +181,7 @@ app.viewFile("/sdcard/1.txt");
 
 - `path` {string} 要重命名的原文件路径
 - `newName` {string} 要重命名的新文件名
-- 返回 {boolean}
+- `return` {boolean}
 
 重命名文件，并返回是否重命名成功。例如`files.rename("/sdcard/1.txt", "2.txt")`。
 
@@ -187,54 +189,54 @@ app.viewFile("/sdcard/1.txt");
 
 - `path` {string} 要重命名的原文件路径
 - `newName` {string} 要重命名的新文件名
-- 返回 {boolean}
+- `return` {boolean}
 
 重命名文件，不包含拓展名，并返回是否重命名成功。例如`files.rename("/sdcard/1.txt", "2")`会把"1.txt"重命名为"2.txt"。
 
 ## files.getName(path)
 
 - `path` {string} 路径
-- 返回 {string}
+- `return` {string}
 
 返回文件的文件名。例如`files.getName("/sdcard/1.txt")`返回"1.txt"。
 
 ## files.getNameWithoutExtension(path)
 
 - `path` {string} 路径
-- 返回 {string}
+- `return` {string}
 
 返回不含拓展名的文件的文件名。例如`files.getName("/sdcard/1.txt")`返回"1"。
 
 ## files.getExtension(path)
 
 - `path` {string} 路径
-- 返回 {string}
+- `return` {string}
 
 返回文件的拓展名。例如`files.getExtension("/sdcard/1.txt")`返回"txt"。
 
 ## files.remove(path)
 
 - `path` {string} 路径
-- 返回 {boolean}
+- `return` {boolean}
 
 删除文件或**空文件夹**，返回是否删除成功。
 
 ## files.removeDir(path)
 
 - `path` {string} 路径
-- 返回 {boolean}
+- `return` {boolean}
 
 删除文件夹，如果文件夹不为空，则删除该文件夹的所有内容再删除该文件夹，返回是否全部删除成功。
 
 ## files.getSdcardPath()
 
-- 返回 {string}
+- `return` {string}
 
 返回 SD 卡路径。所谓 SD 卡，即外部存储器。
 
 ## files.cwd()
 
-- 返回 {string}
+- `return` {string}
 
 返回脚本的"当前工作文件夹路径"。该路径指的是，如果脚本本身为脚本文件，则返回这个脚本文件所在目录；否则返回`null`获取其他设定路径。
 
@@ -243,7 +245,7 @@ app.viewFile("/sdcard/1.txt");
 ## files.path(relativePath)
 
 - `relativePath` {string} 相对路径
-- 返回 {string}
+- `return` {string}
 
 返回相对路径对应的绝对路径。例如`files.path("./1.png")`，如果运行这个语句的脚本位于文件夹"/sdcard/脚本/"中，则返回`"/sdcard/脚本/1.png"`。
 

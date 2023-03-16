@@ -53,10 +53,7 @@
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
 
-public static Bitmap rotate(final Bitmap src,
-                            final int degrees,
-                            final float px,
-                            final float py) {
+public static Bitmap rotate(final Bitmap src,final int degrees,final float px,final float py) {
     if (degrees == 0) return src;
     Matrix matrix = new Matrix();
     matrix.setRotate(degrees, px, py);
@@ -72,19 +69,11 @@ importClass(android.graphics.Bitmap);
 importClass(android.graphics.Matrix);
 
 function rotate(src, degrees, px, py) {
-  if (degrees == 0) return src;
-  var matrix = new Matrix();
-  matrix.setRotate(degrees, px, py);
-  var ret = Bitmap.createBitmap(
-    src,
-    0,
-    0,
-    src.getWidth(),
-    src.getHeight(),
-    matrix,
-    true
-  );
-  return ret;
+	if (degrees == 0) return src;
+	var matrix = new Matrix();
+	matrix.setRotate(degrees, px, py);
+	var ret = Bitmap.createBitmap(src, 0, 0, src.getWidth(), src.getHeight(), matrix, true);
+	return ret
 }
 ```
 

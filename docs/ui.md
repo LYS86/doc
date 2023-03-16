@@ -901,7 +901,7 @@ for (let i = 0; i < 3; i++) {
 ## ui.findView(id)
 
 - `id` {string} View 的 ID
-- 返回 {View}
+- `retrun` {View}
 
 在当前视图中根据 ID 查找相应的视图对象并返回。如果当前未设置视图或找不到此 ID 的视图时返回`null`。
 

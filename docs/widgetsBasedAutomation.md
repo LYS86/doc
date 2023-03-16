@@ -1,4 +1,6 @@
-# 基于控件的操作 <Badge type="tip" text="稳定" vertical="middle" />
+# 基于控件的操作
+
+<Badge type="tip" text="稳定" vertical="middle" />
 
 基于控件的操作指的是选择屏幕上的控件，获取其信息或对其进行操作。对于一般软件而言，基于控件的操作对不同机型有很好的兼容性；但是对于游戏而言，由于游戏界面并不是由控件构成，无法采用本章节的方法，也无法使用本章节的函数。有关游戏脚本的编写，请参考《基于坐标的操作》。
 
@@ -233,7 +235,7 @@ id("recent_chat_list").className("AbsListView").findOne().scrollForward();
 
 ## selector()
 
-- 返回 {UiSelector}
+- `retrun` {UiSelector}
 
 创建一个新的选择器。但一般情况不需要使用该函数，因为可以直接用相应条件的语句创建选择器。
 
@@ -244,7 +246,7 @@ id("recent_chat_list").className("AbsListView").findOne().scrollForward();
 ## UiSelector.text(str)
 
 - `str` {string} 控件文本
-- 返回 {UiSelector} 返回选择器自身以便链式调用
+- `retrun` {UiSelector} 返回选择器自身以便链式调用
 
 为当前选择器附加控件"text 等于字符串 str"的筛选条件。
 
@@ -285,7 +287,7 @@ id("recent_chat_list").className("AbsListView").findOne().scrollForward();
 ## UiSelector.desc(str)
 
 - `str` {string} 控件文本
-- 返回 {UiSelector} 返回选择器自身以便链式调用
+- `retrun` {UiSelector} 返回选择器自身以便链式调用
 
 为当前选择器附加控件"desc 等于字符串 str"的筛选条件。
 
@@ -364,7 +366,7 @@ idMatches("[a-zA-Z]+");
 ## UiSelector.className(str)
 
 - `str` {string} 控件文本
-- 返回 {UiSelector} 返回选择器自身以便链式调用
+- `retrun` {UiSelector} 返回选择器自身以便链式调用
 
 为当前选择器附加控件"className 等于字符串 str"的筛选条件。
 
@@ -416,7 +418,7 @@ idMatches("[a-zA-Z]+");
 ## UiSelector.packageName(str)
 
 - `str` {string} 控件文本
-- 返回 {UiSelector} 返回选择器自身以便链式调用
+- `retrun` {UiSelector} 返回选择器自身以便链式调用
 
 为当前选择器附加控件"packageName 等于字符串 str"的筛选条件。
 
@@ -573,7 +575,7 @@ className("android.support.v7.widget.RecyclerView")
 
 ## UiSelector.findOne()
 
-- 返回 [UiObject](#uiobject)
+- `retrun` [UiObject](#uiobject)
 
 根据当前的选择器所确定的筛选条件，对屏幕上的控件进行搜索，直到屏幕上出现满足条件的一个控件为止，并返回该控件。如果找不到控件，当屏幕内容发生变化时会重新寻找，直至找到。
 
@@ -586,7 +588,7 @@ className("android.support.v7.widget.RecyclerView")
 ## UiSelector.findOne(timeout)
 
 - `timeout` {number} 搜索的超时时间，单位毫秒
-- 返回 [UiObject](#uiobject)
+- `retrun` [UiObject](#uiobject)
 
 根据当前的选择器所确定的筛选条件，对屏幕上的控件进行搜索，直到屏幕上出现满足条件的一个控件为止，并返回该控件；如果在 timeout 毫秒的时间内没有找到符合条件的控件，则终止搜索并返回`null`。
 
@@ -610,7 +612,7 @@ if (w != null) {
 
 ## UiSelector.findOnce()
 
-- 返回 [UiObject](#uiobject)
+- `retrun` [UiObject](#uiobject)
 
 根据当前的选择器所确定的筛选条件，对屏幕上的控件进行搜索，如果找到符合条件的控件则返回该控件；否则返回`null`。
 
@@ -624,7 +626,7 @@ if (w != null) {
 
 ## UiSelector.find()
 
-- 返回 [UiCollection](#uicollection)
+- `retrun` [UiCollection](#uicollection)
 
 根据当前的选择器所确定的筛选条件，对屏幕上的控件进行搜索，找到所有满足条件的控件集合并返回。这个搜索只进行一次，并不保证一定会找到，因而会出现返回的控件集合为空的情况。
 
@@ -643,7 +645,7 @@ if (c.empty()) {
 
 ## UiSelector.untilFind()
 
-- 返回 [UiCollection](#uicollection)
+- `retrun` [UiCollection](#uicollection)
 
 根据当前的选择器所确定的筛选条件，对屏幕上的控件进行搜索，直到找到至少一个满足条件的控件为止，并返回所有满足条件的控件集合。
 
@@ -651,7 +653,7 @@ if (c.empty()) {
 
 ## UiSelector.exists()
 
-- 返回 {Boolean}
+- `retrun` {Boolean}
 
 判断屏幕上是否存在控件符合选择器所确定的条件。例如要判断某个文本出现就执行某个动作，可以用：
 
@@ -693,7 +695,7 @@ UiObject 表示一个控件，可以通过这个对象获取到控件的属性�
 
 ## UiObject.click()
 
-- 返回 {Boolean}
+- `retrun` {Boolean}
 
 点击该控件，并返回是否点击成功。
 
@@ -701,7 +703,7 @@ UiObject 表示一个控件，可以通过这个对象获取到控件的属性�
 
 ## UiObject.longClick()
 
-- 返回 {Boolean}
+- `retrun` {Boolean}
 
 长按该控件，并返回是否点击成功。
 
@@ -710,7 +712,7 @@ UiObject 表示一个控件，可以通过这个对象获取到控件的属性�
 ## UiObject.setText(text)
 
 - `text` {string} 文本
-- 返回 {Boolean}
+- `retrun` {Boolean}
 
 设置输入框控件的文本内容，并返回是否设置成功。
 
@@ -718,7 +720,7 @@ UiObject 表示一个控件，可以通过这个对象获取到控件的属性�
 
 ## UiObject.copy()
 
-- 返回 {Boolean}
+- `retrun` {Boolean}
 
 对输入框文本的选中内容进行复制，并返回是否操作成功。
 
@@ -744,7 +746,7 @@ if (et.copy()) {
 
 ## UiObject.paste()
 
-- 返回 {Boolean}
+- `retrun` {Boolean}
 
 对输入框控件进行粘贴操作，把剪贴板内容粘贴到输入框中，并返回是否操作成功。
 
@@ -759,7 +761,7 @@ et.paste();
 
 - `start` {number} 选中内容起始位置
 - `end` {number} 选中内容结束位置(不包括)
-- 返回 {Boolean}
+- `retrun` {Boolean}
 
 对输入框控件设置选中的文字内容，并返回是否操作成功。
 
@@ -769,7 +771,7 @@ et.paste();
 
 ## UiObject.scrollForward()
 
-- 返回 {Boolean}
+- `retrun` {Boolean}
 
 对控件执行向前滑动的操作，并返回是否操作成功。
 
@@ -777,7 +779,7 @@ et.paste();
 
 ## UiObject.scrollBackward()
 
-- 返回 {Boolean}
+- `retrun` {Boolean}
 
 对控件执行向后滑动的操作，并返回是否操作成功。
 
@@ -785,19 +787,19 @@ et.paste();
 
 ## UiObject.select()
 
-- 返回 {Boolean}
+- `retrun` {Boolean}
 
 对控件执行"选中"操作，并返回是否操作成功。"选中"和`isSelected()`的属性相关，但该操作十分少用。
 
 ## UiObject.collapse()
 
-- 返回 {Boolean}
+- `retrun` {Boolean}
 
 对控件执行折叠操作，并返回是否操作成功。
 
 ## UiObject.expand()
 
-- 返回 {Boolean}
+- `retrun` {Boolean}
 
 对控件执行操作，并返回是否操作成功。
 
@@ -823,7 +825,7 @@ et.paste();
 
 ## children()
 
-- 返回 [UiCollection](#uicollection)
+- `retrun` [UiCollection](#uicollection)
 
 返回该控件的所有子控件组成的控件集合。可以用于遍历一个控件的子控件，例如：
 
@@ -838,14 +840,14 @@ className("AbsListView")
 
 ## childCount()
 
-- 返回 {number}
+- `retrun` {number}
 
 返回子控件数目。
 
 ## child(i)
 
 - `i` {number} 子控件索引
-- 返回 {UiObject}
+- `retrun` {UiObject}
 
 返回第 i+1 个子控件。如果 i>=控件数目或者小于 0，则抛出异常。
 
@@ -863,13 +865,13 @@ for (var i = 0; i < list.childCount(); i++) {
 
 ## parent()
 
-- 返回 {UiObject}
+- `retrun` {UiObject}
 
 返回该控件的父控件。如果该控件没有父控件，返回`null`。
 
 ## bounds()
 
-- 返回 [Rect](#rect)
+- `retrun` [Rect](#rect)
 
 返回控件在屏幕上的范围，其值是一个[Rect](#rect)对象。
 
@@ -890,32 +892,32 @@ click(b.centerX(), b.centerY());
 
 ## boundsInParent()
 
-- 返回 [Rect](#rect)
+- `retrun` [Rect](#rect)
 
 返回控件在父控件中的范围，其值是一个[Rect](#rect)对象。
 
 ## drawingOrder()
 
-- 返回 {number}
+- `retrun` {number}
 
 返回控件在父控件中的绘制次序。该函数在安卓 7.0 及以上才有效，7.0 以下版本调用会返回 0。
 
 ## id()
 
-- 返回 {string}
+- `retrun` {string}
 
 获取控件的 id，如果一个控件没有 id，则返回`null`。
 
 ## text()
 
-- 返回 {string}
+- `retrun` {string}
 
 获取控件的文本，如果控件没有文本，返回`""`。
 
 ## findByText(str)
 
 - `str` {string} 文本
-- 返回 [UiCollection](#uicollection)
+- `retrun` [UiCollection](#uicollection)
 
 根据文本 text 在子控件中递归地寻找并返回文本或描述(desc)**包含**这段文本 str 的控件，返回它们组成的集合。
 
@@ -924,7 +926,7 @@ click(b.centerX(), b.centerY());
 ## findOne(selector)
 
 - `selector` [UiSelector](#uiselector)
-- 返回 [UiOobject](#uiobject)
+- `retrun` [UiOobject](#uiobject)
 
 根据选择器 selector 在该控件的子控件、孙控件...中搜索符合该选择器条件的控件，并返回找到的第一个控件；如果没有找到符合条件的控件则返回`null`。
 
@@ -954,7 +956,7 @@ list.children().forEach(function (child) {
 ## find(selector)
 
 - `selector` [UiSelector](#uiselector)
-- 返回 [UiCollection](#uicollection)
+- `retrun` [UiCollection](#uicollection)
 
 根据选择器 selector 在该控件的子控件、孙控件...中搜索符合该选择器条件的控件，并返回它们组合的集合。
 
@@ -996,7 +998,7 @@ UiCollection 的每一个元素都是 UiObject，我们可以取出他的元素�
 
 ## UiCollection.size()
 
-- 返回 {number}
+- `retrun` {number}
 
 返回集合中的控件数。
 
@@ -1005,7 +1007,7 @@ UiCollection 的每一个元素都是 UiObject，我们可以取出他的元素�
 ## UiCollection.get(i)
 
 - `i` {number} 索引
-- 返回 [UiObject](#uiobject)
+- `retrun` [UiObject](#uiobject)
 
 返回集合中第 i+1 个控件(UiObject)。
 
@@ -1021,20 +1023,20 @@ UiCollection 的每一个元素都是 UiObject，我们可以取出他的元素�
 
 ## empty()
 
-- 返回 {Boolean}
+- `retrun` {Boolean}
 
 返回控件集合是否为空。
 
 ## nonEmpty()
 
-- 返回 {Boolean}
+- `retrun` {Boolean}
 
 返回控件集合是否非空。
 
 ## UiCollection.find(selector)
 
 - `selector` [UiSelector](#uiselector)
-- 返回 [UiCollection](#uicollection)
+- `retrun` [UiCollection](#uicollection)
 
 根据 selector 所确定的条件在该控件集合的控件、子控件、孙控件...中找到所有符合条件的控件并返回找到的控件集合。
 
@@ -1051,7 +1053,7 @@ var clickableNames = names.find(clickable());
 ## UiCollection.findOne(selector)
 
 - `selector` [UiSelector](#uiselector)
-- 返回 [UiOobject](#uiobject)
+- `retrun` [UiOobject](#uiobject)
 
 根据选择器 selector 在该控件集合的控件的子控件、孙控件...中搜索符合该选择器条件的控件，并返回找到的第一个控件；如果没有找到符合条件的控件则返回`null`。
 
@@ -1085,25 +1087,25 @@ var clickableNames = names.find(clickable());
 
 ## Rect.centerX()
 
-- 返回 {number}
+- `retrun` {number}
 
 长方形中点 x 坐标。
 
 ## Rect.centerY()
 
-- 返回 {number}
+- `retrun` {number}
 
 长方形中点 y 坐标。
 
 ## Rect.width()
 
-- 返回 {number}
+- `retrun` {number}
 
 长方形宽度。通常可以作为控件宽度。
 
 ## Rect.height()
 
-- 返回 {number}
+- `retrun` {number}
 
 长方形高度。通常可以作为控件高度。
 
