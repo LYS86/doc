@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-79fb34ab","path":"/websocket.html","title":"websocket","lang":"zh-CN","frontmatter":{},"headers":[{"level":2,"title":"创建 websocket 客户端","slug":"创建-websocket-客户端","link":"#创建-websocket-客户端","children":[]}],"git":{},"filePathRelative":"websocket.md"}');export{e as data};
