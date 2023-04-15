@@ -1,85 +1,35 @@
 # 压缩与解压
 
-## 压缩
+`zips` 模块提供了压缩和解压缩文件的功能，支持多种常见的压缩格式。
 
-```js
-//压缩文件路径(必须是完整路径)
-var filePath = "/sdcard/脚本.7z";
-//目录路径(必须是完整路径)
-var dirPath = "/sdcard/脚本";
-//压缩类型
-//支持的压缩类型包括:
-//  zip 7z bz2 bzip2 tbz2 tbz gz gzip tgz tar wim swm xz txz。
-var type = "7z";
-//压缩密码
-var password = "password";
+## zips.A(type, filePath, dirPath, [password])
 
-//7z加密压缩(若文件已存在则跳过)
-//zips.A(type, filePath, dirPath, password)
+将指定目录中的文件按照指定的格式压缩成文件后储存在指定的路径下。
 
-//压缩
-switch (zips.A(type, filePath, dirPath)) {
-  case 0:
-    toastLog("压缩成功！文件已保存为： " + filePath);
-    break;
-  case 1:
-    toastLog("压缩结束，存在非致命错误（例如某些文件正在被使用，没有被压缩）");
-    break;
-  case 2:
-    toastLog("致命错误");
-    break;
-  case 7:
-    toastLog("命令行错误");
-    break;
-  case 8:
-    toastLog("没有足够内存");
-    break;
-  case 255:
-    toastLog("用户中止操作");
-    break;
-  default:
-    toastLog("未知错误");
-}
-```
+- `type` {string} - 压缩类型，支持的格式包括：zip、7z、bz2、bzip2、tbz2、tbz、gz、gzip、tgz、tar、wim、swm、xz、txz。
+- `filePath` {string} - 压缩包存储的路径名称。
+- `dirPath` {string} - 需要压缩的目录完整路径名称。
+- `password` {string} - 可选参数，压缩密码。
+- `retrun` {number} - 压缩结果状态码
 
-## 解压
+## zips.X(filePath, dirPath, [password])
 
-```js
-//压缩文件路径(必须是完整路径)
-var filePath = files.path("./bonus.rar");
-//目录路径(必须是完整路径)
-var dirPath = "/sdcard/脚本";
-//压缩密码
-var password = "password";
+解压指定的压缩文件包，并将解压后的文件储存在指定的目录下。
 
-//支持的解压缩类型包括：
-// zip、7z、bz2、bzip2、tbz2、tbz、gz、gzip、tgz、tar、
-// wim、swm、xz、txz以及rar、chm、iso、msi等众多格式。
+- `filePath` {string} - 压缩文件的完整路径名称，必须是以下支持的压缩格式之一：zip、7z、bz2、bzip2、tbz2、tbz、gz、gzip、tgz、tar、wim、swm、xz、txz、rar、chm、iso、msi。
+- `dirPath` {string} - 解压后的文件存储的目录完整路径名称。
+- `[password?]` {string} - 可选参数，压缩密码。
+- `retrun` {number} - 解压缩结果状态码
 
-//解压无加密的压缩包(若文件已存在则跳过)
-//zips.X(filePath, dirPath)
+### 状态码
 
-//解压加密的压缩包(若文件已存在则跳过)
-switch (zips.X(filePath, dirPath, password)) {
-  case 0:
-    toastLog("解压缩成功！请到 " + dirPath + " 目录下查看。");
-    break;
-  case 1:
-    toastLog("压缩结束，存在非致命错误（例如某些文件正在被使用，没有被压缩）");
-    break;
-  case 2:
-    toastLog("致命错误");
-    break;
-  case 7:
-    toastLog("命令行错误");
-    break;
-  case 8:
-    toastLog("没有足够内存");
-    break;
-  case 255:
-    toastLog("用户中止操作");
-    break;
-  default:
-    toastLog("未知错误");
-}
-```
+| 状态码 |                                  返回值含义                                  |
+| :----: | :--------------------------------------------------------------------------: |
+|   0    |                    压缩/解压缩成功，文件已保存到指定路径                     |
+|   1    | 压缩/解压缩结束，存在非致命错误（例如某些文件正在被使用，没有被压缩/解压缩） |
+|   2    |                                   致命错误                                   |
+|   7    |                                  命令行错误                                  |
+|   8    |                                 没有足够内存                                 |
+|  255   |                                 用户中止操作                                 |
+|  其他  |                                   未知错误                                   |
+
